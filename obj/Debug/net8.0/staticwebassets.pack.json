@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/home/moni/Documents/workspace/repos/Portfolio/obj/Debug/net8.0/scopedcss/projectbundle/Portfolio.bundle.scp.css",
+      "PackagePath": "staticwebassets/Portfolio.bundle.scp.css"
+    },
+    {
+      "Id": "/home/moni/Documents/workspace/repos/Portfolio/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/home/moni/Documents/workspace/repos/Portfolio/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/home/moni/Documents/workspace/repos/Portfolio/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/home/moni/Documents/workspace/repos/Portfolio/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/home/moni/Documents/workspace/repos/Portfolio/wwwroot/images/foto-de-perfil.png",
+      "PackagePath": "staticwebassets/images/foto-de-perfil.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Portfolio.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.Portfolio.props",
+      "PackagePath": "build\\Portfolio.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Portfolio.props",
+      "PackagePath": "buildMultiTargeting\\Portfolio.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Portfolio.props",
+      "PackagePath": "buildTransitive\\Portfolio.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
