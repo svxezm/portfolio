@@ -6,8 +6,16 @@
 
 main {
     flex: 1;
-    background-color: hsl(260, 40%, 40%);
+    background-color: hsl(280, 40%, 20%);
+    color: hsl(285, 70%, 20%);
     height: 100vh;
+}
+
+article {
+    background-color: #f8f8ff;
+    width: 80rem;
+    margin: 2rem;
+    border-radius: 1rem;
 }
 
 .navbar {
