@@ -8,7 +8,7 @@ main {
     flex: 1;
     background-color: hsl(280, 40%, 20%);
     color: hsl(285, 70%, 20%);
-    height: 100vh;
+    height: 100%;
 }
 
 article {
