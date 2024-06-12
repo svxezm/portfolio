@@ -1,11 +1,11 @@
 @using System.Collections.Generic
 
-<div class="p-2">
-    <p>@Label</p>
-        <div class="d-inline-flex justify-content-evenly" style="width: 30rem">
+<div class="my-5">
+    <h3>@Label</h3>
+        <div class="d-inline-flex flex-wrap justify-content-evenly" style="width: 30rem">
             @for (int i = 0; i < IconPaths.Length; i++)
             {
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column m-2">
                     <img src="images/@IconPaths[i]" alt="@Titles[i]" title="@Titles[i]" height="100px" />
                     <span>@Titles[i]</span>
                 </div>
