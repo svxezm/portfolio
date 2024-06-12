@@ -5,7 +5,11 @@
 
 html, body {
     font-family: Montserrat, Arial, sans-serif;
-    overflow: auto;
+    background-color: hsl(280, 40%, 20%);
+    background-image: url("images/starry-background.png");
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top;
 }
 
 a, .btn-link {
