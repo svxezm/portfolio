@@ -1,3 +1,7 @@
+:root {
+    --pansy-purple: hsl(330, 61%, 28%);
+}
+
 @font-face {
     font-family: 'Montserrat';
     src: url('fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
@@ -8,12 +12,13 @@ html, body {
     background-color: hsl(280, 40%, 20%);
     background-image: url("images/starry-background.png");
     background-attachment: scroll;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: top;
+    color: var(--pansy-purple);
 }
 
 a, .btn-link {
-    color: #006bb7;
+    color: var(--pansy-purple);
 }
 
 .btn-primary {
