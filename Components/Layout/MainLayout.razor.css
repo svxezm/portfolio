@@ -4,20 +4,6 @@
     flex-direction: row;
 }
 
-.background-stars {
-    position: absolute;
-    justify-content: space-between;
-    width: 100%;
-    height: 90%;
-}
-
-.background-stars img {
-    opacity: 0.3;
-    height: 100%;
-    width: 100%;
-    repeat: repeat;
-}
-
 main {
     flex: 1;
     color: var(--pansy-purple);
@@ -27,13 +13,19 @@ main {
 article {
     background-color: #ffe5ed;
     width: 80rem;
-    margin: 2rem;
+    margin-top: 5rem;
     border-radius: 1rem;
     padding: 2rem;
 }
 
+.starry-background {
+    background-image: url("images/starry-background.png");
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+    background-position: top;
+}
+
 .top-row {
-    background-image: linear-gradient(90deg, rgb(5, 39, 103) 0%, #3a0647 70%);
     border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
     height: 5rem;
