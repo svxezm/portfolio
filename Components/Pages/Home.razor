@@ -1,32 +1,53 @@
 ﻿@page "/"
 @using Portfolio.Components.Layout
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Página Inicial</PageTitle>
 
-<div class="text-center">
-    <div class="d-flex flex-row justify-content-around align-items-center">
-        <div class="d-flex flex-column" style="width: 30em">
-            <h2>Igor Borges Kühl</h2>
-            <h4>Desenvolvedor de Software</h4>
-            <p class="my-5">Estudo por conta própria pela internet com foco no aprendizado para desenvolver páginas web e aplicativos cada vez melhores!</p>
-        </div>
-        <ProfilePicture />
+<div class="d-flex flex-row justify-content-around align-items-center">
+    <div class="d-flex flex-column" style="width: 30em">
+        <h2 class="bolder">Igor Borges Kühl</h2>
+        <h4>Desenvolvedor de Software</h4>
+        <p class="my-5">Estudo por conta própria pela internet com foco no aprendizado para desenvolver páginas web e aplicativos cada vez melhores!</p>
     </div>
+    <ProfilePicture />
+</div>
 
 
-    <div class="language-container d-flex flex-row justify-content-evenly">
-        <LanguageBlock
-            Label="Tenho conhecimento em:"
-            IconPaths="@_knownLanguagePaths"
-            Titles="@_knownLanguageTitles"
-        />
+<div class="language-container d-flex flex-row justify-content-evenly text-center">
+    <LanguageBlock
+        Label="Tenho conhecimento em:"
+        IconPaths="@_knownLanguagePaths"
+        Titles="@_knownLanguageTitles"
+    />
 
-        <LanguageBlock
-            Label="Pretendo estudar:"
-            IconPaths="@_languagesToStudyPaths"
-            Titles="@_languagesToStudyTitles"
-        />
-    </div>
+    <LanguageBlock
+        Label="Pretendo estudar:"
+        IconPaths="@_languagesToStudyPaths"
+        Titles="@_languagesToStudyTitles"
+    />
+</div>
+
+<div class="poject-displays" style="margin-left: 7rem">
+    <h3 class="pb-3">Projetos</h3>
+    <ProjectDisplay
+        Title="Gerador de cores"
+        Description="Este projeto gera cores aleatórias em RGB e as converte para outros códigos de cores, basta apenas clicar no botão."
+        ImagePath="images/projects/color-generator.png"
+        ProjectLink="https://github.com/monitzz/color-generator"
+        DeployedLink="https://color-generator-gqnc8z0th-igor-borges-projects-6e496d8b.vercel.app"
+    />
+    <ProjectDisplay
+        Title="Jogo da velha"
+        Description="Um jogo que é aberto no terminal. Escolha X ou O e onde deseja colocar. Divirta-se :)"
+        ImagePath="images/projects/tic-tac-toe.png"
+        ProjectLink="https://github.com/monitzz/tic-tac-toe"
+    />
+    <ProjectDisplay
+        Title="Gerador de senhas"
+        Description="Um simples gerador de senhas. As senhas são geradas com 15 caracteres por padrão mas o comprimento pode ser ajustado no código. Todas as senhas são armazenadas no arquivo .txt, caso precise consultá-las depois."
+        ImagePath="images/projects/password-generator.png"
+        ProjectLink="https://github.com/monitzz/password-generator"
+    />
 </div>
 
 @code
