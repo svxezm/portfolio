@@ -7,3 +7,5 @@ Fato curioso: comecei a estudar Blazor para a criação dessa página.
 - [SVG Repo](https://www.svgrepo.com/)
 - [FLATICON](https://www.flaticon.com/)
 - [Iconduck](https://iconduck.com/)
+
+Ilustração de fundo com imagens obtidas em [Vecteezy](https://www.vecteezy.com/) feitas por [Animated Video](https://www.vecteezy.com/members/animatedvideo).
