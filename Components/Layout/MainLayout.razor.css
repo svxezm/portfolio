@@ -20,7 +20,7 @@
 
 main {
     flex: 1;
-    color: hsl(285, 70%, 20%);
+    color: var(--pansy-purple);
     height: 100%;
 }
 
