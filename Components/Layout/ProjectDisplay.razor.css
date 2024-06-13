@@ -1,0 +1,24 @@
+.project-display {
+    background-color: hsla(340, 77%, 88%, 0.2);
+    width: 50em;
+}
+
+.display-header {
+    border-bottom: solid 1px hsl(285, 70%, 20%);
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+
+.deployed-link {
+    text-decoration: underline!important;
+}
+
+a:hover {
+    color: #4c1048;
+}
+
+img {
+    height: 300px;
+}
