@@ -41,42 +41,34 @@
 
 
 <div class="language-container d-flex flex-row justify-content-evenly text-center">
-    <LanguageBlock
-        Label="Tenho conhecimento em:"
-        IconPaths="@_knownLanguagePaths"
-        Titles="@_knownLanguageTitles"
-    />
-
-    <LanguageBlock
-        Label="Pretendo estudar:"
-        IconPaths="@_languagesToStudyPaths"
-        Titles="@_languagesToStudyTitles"
-    />
+    @foreach (var info in LanguageInfos)
+    {
+        @for (int i = 0; i < info.Titles.Length; i++)
+        {
+            <LanguageBlock
+                Label="@info.Labels[i]"
+                IconPaths="@info.IconPaths[i]"
+                Titles="@info.Titles[i]"
+            />
+        }
+    }
 </div>
 
 <div class="poject-displays" style="margin-left: 7rem">
     <h3 class="pb-3">Projetos</h3>
-    <ProjectDisplay
-        Title="Gerador de cores"
-        Description="Este projeto gera cores aleatórias em RGB e as converte para outros códigos de cores, basta apenas clicar no botão."
-        ImagePath="images/projects/color-generator.png"
-        ProjectLink="https://github.com/monitzz/color-generator"
-        DeployedLink="https://color-generator-gqnc8z0th-igor-borges-projects-6e496d8b.vercel.app"
-    />
-    <ProjectDisplay
-        Title="Jogo da velha"
-        Description="Um jogo que é aberto no terminal. Escolha X ou O e onde deseja colocar. Divirta-se :)"
-        ImagePath="images/projects/tic-tac-toe.png"
-        ProjectLink="https://github.com/monitzz/tic-tac-toe"
-        DeployedLink="https://replit.com/join/yoieqhxyag-igorbkuhl"
-    />
-    <ProjectDisplay
-        Title="Gerador de senhas"
-        Description="Um simples gerador de senhas. As senhas são geradas com 15 caracteres por padrão mas o comprimento pode ser ajustado no código. Todas as senhas são armazenadas no arquivo .txt, caso precise consultá-las depois."
-        ImagePath="images/projects/password-generator.png"
-        ProjectLink="https://github.com/monitzz/password-generator"
-        DeployedLink="https://replit.com/join/lgjoasfsjg-igorbkuhl"
-     />
+    @foreach (var info in ProjectInfos)
+    {
+        @for (int i = 0; i < info.Titles.Length; i++)
+        {
+            <ProjectDisplay
+                Title="@info.Titles[i]"
+                Description="@info.Descriptions[i]"
+                ImagePath="@info.ImagePaths[i]"
+                ProjectLink="@info.ProjectLinks[i]"
+                DeployedLink="@info.Descriptions[i]"
+            />
+        }
+    }
 </div>
 
 @code
@@ -85,4 +77,63 @@
     private string[] _knownLanguageTitles = ["C#", "Blazor", "React", "Vue", "JavaScript", "HTML", "CSS"];
     private string[] _languagesToStudyPaths = ["aspdotnet.svg", "sql.svg", "c.svg"];
     private string[] _languagesToStudyTitles = ["ASP.NET", "SQL", "C"];
+
+    List<LanguageBlockInfo> LanguageInfos = new List<LanguageBlockInfo>();
+    List<ProjectDisplayInfo> ProjectInfos = new List<ProjectDisplayInfo>();
+
+    protected override void OnInitialized()
+    {
+        LanguageInfos.Add(new LanguageBlockInfo
+        {
+            Labels = new[]
+            {
+                "Tenho conhecimento em",
+                "Pretendo estudar"
+            },
+            IconPaths = new[]
+            {
+                new[] {"c-sharp.svg", "blazor.svg", "react.svg", "vue.svg", "javascript.svg", "html.svg", "css.svg"},
+                new[] {"aspdotnet.svg", "sql.svg", "c.svg"}
+            },
+            Titles = new[]
+            {
+                new[] {"C#", "Blazor", "React", "Vue", "JavaScript", "HTML", "CSS"},
+                new[] {"ASP.NET", "SQL", "C"}
+            },
+        });
+
+        ProjectInfos.Add(new ProjectDisplayInfo
+        {
+            Titles = new[]
+            {
+                "Gerador de cores",
+                "Jogo da velha",
+                "Gerador de senhas"
+            },
+            Descriptions = new[]
+            {
+                "Este projeto gera cores aleatórias em RGB e as converte para outros códigos de cores, basta apenas clicar no botão.",
+                "Um jogo que é aberto no terminal. Escolha X ou O e onde deseja colocar. Divirta-se :)",
+                "Um simples gerador de senhas. As senhas são geradas com 15 caracteres por padrão mas o comprimento pode ser ajustado no código. Todas as senhas são armazenadas no arquivo .txt, caso precise consultá-las depois."
+            },
+            ImagePaths = new[]
+            {
+                "images/projects/color-generator.png",
+                "images/projects/tic-tac-toe.png",
+                "images/projects/password-generator.png"
+            },
+            ProjectLinks = new[]
+            {
+                "https://github.com/monitzz/color-generator",
+                "https://github.com/monitzz/tic-tac-toe",
+                "https://github.com/monitzz/password-generator"
+            },
+            DeployedLinks = new[]
+            {
+                "https://color-generator-gqnc8z0th-igor-borges-projects-6e496d8b.vercel.app",
+                "https://replit.com/join/yoieqhxyag-igorbkuhl",
+                "https://replit.com/join/lgjoasfsjg-igorbkuhl"
+            }
+        });
+    }
 }
