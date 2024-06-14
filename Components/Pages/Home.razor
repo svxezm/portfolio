@@ -5,35 +5,23 @@
 
 <div class="d-flex flex-row justify-content-around align-items-center">
     <div class="d-flex flex-column" style="width: 30em">
-        <h2 class="bolder">Igor Borges Kühl</h2>
+        <h1 class="bolder">Igor Borges Kühl</h1>
         <h4>Desenvolvedor de Software</h4>
         <p class="my-4">Estudo por conta própria pela internet com foco no aprendizado para desenvolver páginas web e aplicativos cada vez melhores!</p>
         <div class="social d-flex flex-column">
-            <p>Contatos:</p>
-            <span>
-                <img class="me-2" src="images/icons/discord.svg" alt="Discord" title="Discord" height="20px" />
-                <a href="https://github.com/monitzz" target="_blank">
-                    igorbkuhl
-                </a>
-            </span>
-            <span>            
-                <img class="me-2" src="images/icons/instagram.svg" alt="Instagram" title="Instagram" height="20px" />
-                <a href="https://www.instagram.com/igor.borgesk/" target="_blank">
-                    igor.borgesk
-                </a>
-            </span>
-            <span>
-                <img class="me-2" src="images/icons/whatsapp.svg" alt="WhatsApp" title="Whatsapp" height="20px" />
-                <a href="https://wa.me/5551995826812" target="_blank">
-                    +55 51 99582-6812
-                </a>
-            </span>
-            <span>
-                <img class="me-2" src="images/icons/github.svg" alt="GitHub" title="GitHub" height="20px" />
-                <a href="https://github.com/monitzz" target="_blank">
-                    monitzz
-                </a>
-            </span>
+            <p class="fw-bolder">Contatos:</p>
+            @foreach (var info in ContactInfo)
+            {
+                @for (int i = 0; i < info.Titles.Length; i++)
+                {
+                    <ContactLink
+                        IconPath="@info.IconPaths[i]" 
+                        Title="@info.Titles[i]"
+                        Url="@info.Urls[i]"
+                        Text="@info.Texts[i]"
+                    />
+                }
+            }
         </div>
     </div>
     <ProfilePicture />
@@ -73,16 +61,44 @@
 
 @code
 {
-    private string[] _knownLanguagePaths = ["c-sharp.svg", "blazor.svg","react.svg", "vue.svg", "javascript.svg", "html.svg", "css.svg"];
-    private string[] _knownLanguageTitles = ["C#", "Blazor", "React", "Vue", "JavaScript", "HTML", "CSS"];
-    private string[] _languagesToStudyPaths = ["aspdotnet.svg", "sql.svg", "c.svg"];
-    private string[] _languagesToStudyTitles = ["ASP.NET", "SQL", "C"];
-
-    List<LanguageBlockInfo> LanguageInfos = new List<LanguageBlockInfo>();
-    List<ProjectDisplayInfo> ProjectInfos = new List<ProjectDisplayInfo>();
+    private List<Contact> ContactInfo = new List<Contact>();
+    private List<LanguageBlockInfo> LanguageInfos = new List<LanguageBlockInfo>();
+    private List<ProjectDisplayInfo> ProjectInfos = new List<ProjectDisplayInfo>();
 
     protected override void OnInitialized()
     {
+        ContactInfo.Add(new Contact
+        {
+            IconPaths = new[]
+            {
+                "discord.svg",
+                "instagram.svg",
+                "whatsapp.svg",
+                "github.svg"
+            },
+            Titles = new[]
+            {
+                "Discord",
+                "Instagram",
+                "WhatsApp",
+                "GitHub"
+            },
+            Urls = new[]
+            {
+                "https://github.com/monitzz",
+                "https://www.instagram.com/igor.borgesk/",
+                "https://wa.me/5551995826812",
+                "https://github.com/monitzz"
+            },
+            Texts = new[]
+            {
+                "igorbkuhl",
+                "igor.borgesk",
+                "+55 51 99582-6812",
+                "monitzz"
+            }
+        });
+
         LanguageInfos.Add(new LanguageBlockInfo
         {
             Labels = new[]
