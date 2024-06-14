@@ -1,17 +1,13 @@
 <div class="project-display rounded p-4 mb-4 shadow">
     <div class="display-header mb-3 d-flex justify-content-between">
-        <a href="@ProjectLink" target="_blank">
-            <h5>@Title</h5>
-        </a>
+        <h5>@Title</h5>
     </div>
     <div class="display-body d-flex">
         <img src="@ImagePath" />
         <div class="text-area p-3">
             <p>@Description</p>
-            @if (!string.IsNullOrEmpty(DeployedLink))
-            {
-                <p>Este projeto pode ser acessado por <a class="deployed-link" href="@DeployedLink">aqui</a>.</p>
-            }
+            <p>Este projeto pode ser acessado por <a class="stylized-link" href="@DeployedLink" target="_blank">aqui</a>.</p>
+            <a class="stylized-link" href="@ProjectLink" target="_blank">Repositório do projeto.</a>
         </div>
     </div>
 </div>
@@ -22,5 +18,5 @@
     [Parameter] public string Description { get; set; } = "";
     [Parameter] public string ImagePath { get; set; } = "";
     [Parameter] public string ProjectLink { get; set; } = "";
-    [Parameter] public string? DeployedLink { get; set; } = "";
+    [Parameter] public string DeployedLink { get; set; } = "";
 }

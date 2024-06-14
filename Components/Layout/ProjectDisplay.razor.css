@@ -11,7 +11,7 @@ a, a:link, a:visited {
     text-decoration: none;
 }
 
-.deployed-link {
+.stylized-link {
     text-decoration: underline!important;
 }
 
