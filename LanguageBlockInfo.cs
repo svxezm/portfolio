@@ -1,8 +1,8 @@
 namespace Portfolio;
 
-internal class LanguageBlockInfo
+public class LanguageBlockInfo
 {
-    internal string[] Labels { get; set; } = Array.Empty<string>();
-    internal string[][] IconPaths { get; set; } = new string[2][];
-    internal string[][] Titles { get; set; } = new string[2][];
+    public string[] Labels { get; set; } = Array.Empty<string>();
+    public string[][] IconPaths { get; set; } = new string[2][];
+    public string[][] Titles { get; set; } = new string[2][];
 }
