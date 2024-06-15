@@ -10,14 +10,6 @@ main {
     height: 100%;
 }
 
-article {
-    background-color: #ffe5ed;
-    width: 80rem;
-    margin-top: 5rem;
-    border-radius: 1rem;
-    padding: 2rem;
-}
-
 .starry-background {
     background-image: url("images/starry-background.png");
     background-repeat: repeat-y;
@@ -25,27 +17,39 @@ article {
     background-position: top;
 }
 
-.top-row {
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 5rem;
-    display: flex;
-    align-items: center;
+
+article {
+    background-color: #ffe5ed;
+    width: fit-content;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    padding: 2rem;
 }
 
-.top-row ::deep a, .top-row ::deep .btn-link {
-    white-space: nowrap;
-    margin-left: 1.5rem;
-    text-decoration: none;
+@media all and (max-width: 412px)
+{
+    article {
+        width: 100vw!important;
+    }
+
+    img {
+        height: 2rem;
+    }
 }
 
-.top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-    text-decoration: underline;
-}
+@media all and (max-width: 810px)
+{
+    article {
+        margin-top: 0;
+        width: 100%;
+        border-radius: 0;
+    }
 
-.top-row ::deep a:first-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    section {
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: fit-content;
+    }
 }
 
 @media (max-width: 640.98px) {

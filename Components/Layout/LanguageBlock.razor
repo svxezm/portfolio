@@ -1,19 +1,52 @@
-<div class="my-5">
-    <h3>@Label</h3>
-        <div class="d-inline-flex flex-wrap justify-content-evenly" style="width: 30rem">
-            @for (int i = 0; i < IconPaths.Length; i++)
-            {
-                <div class="d-flex flex-column m-2">
-                    <img src="images/icons/@IconPaths[i]" alt="@Titles[i]" title="@Titles[i]" height="100px" />
-                    <span>@Titles[i]</span>
+<section class="language-container">
+    @foreach (var info in LanguageInfos)
+    {
+        @for (int i = 0; i < info.Labels.Length; i++)
+        {
+            <div class="language-item">
+                <h3 class="w-100 text-center">@info.Labels[i]</h3>
+                <div class="icon-container">
+                    @for (int j = 0; j < info.IconPaths[i]?.Length; j++)
+                    {
+                        <div class="d-flex flex-column m-2">
+                            <img
+                                class="language-icon"
+                                src="images/icons/@info.IconPaths[i][j]"
+                                alt="@info.Titles[i][j]"
+                                title="@info.Titles[i][j]"
+                            />
+                            <span class="text-center">@info.Titles[i][j]</span>
+                        </div>
+                    }
                 </div>
-            }
-        </div>
-</div>
+            </div>
+        }
+    }
+</section>
 
 @code
 {
-    [Parameter] public string Label { get; set; } = "";
-    [Parameter] public string[] IconPaths { get; set; } = [];
-    [Parameter] public string[] Titles { get; set; } = [];
+    private List<LanguageBlockInfo> LanguageInfos = new List<LanguageBlockInfo>();
+
+    protected override void OnInitialized()
+    {
+        LanguageInfos.Add(new LanguageBlockInfo
+        {
+            Labels = new[]
+            {
+                "Tenho conhecimento em",
+                "Pretendo estudar"
+            },
+            IconPaths = new[]
+            {
+                new[] {"c-sharp.svg", "blazor.svg", "react.svg", "vue.svg", "javascript.svg", "html.svg", "css.svg"},
+                new[] {"aspdotnet.svg", "sql.svg", "c.svg"}
+            },
+            Titles = new[]
+            {
+                new[] {"C#", "Blazor", "React", "Vue", "JavaScript", "HTML", "CSS"},
+                new[] {"ASP.NET", "SQL", "C"}
+            },
+        });
+     }   
 }
