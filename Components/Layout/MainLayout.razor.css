@@ -26,23 +26,16 @@ article {
     padding: 2rem;
 }
 
-@media all and (max-width: 412px)
+@media all and (max-width: 1000px)
 {
     article {
-        width: 100vw!important;
+        width: 100vw;
+        margin-top: 0;
+        border-radius: 0;
     }
 
     img {
         height: 2rem;
-    }
-}
-
-@media all and (max-width: 810px)
-{
-    article {
-        margin-top: 0;
-        width: 100%;
-        border-radius: 0;
     }
 
     section {
@@ -52,42 +45,9 @@ article {
     }
 }
 
-@media (max-width: 640.98px) {
-    .top-row {
-        justify-content: space-between;
-    }
-
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        margin-left: 0;
-    }
-}
-
 @media (min-width: 641px) {
     .page {
         flex-direction: row;
-    }
-
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
-    .top-row {
-        top: 0;
-        z-index: 1;
-    }
-
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
-
-    .top-row, article {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
     }
 }
 

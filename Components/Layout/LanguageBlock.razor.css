@@ -28,7 +28,23 @@
     width: 5rem;
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 1000px) {
+  .language-container {
+    flex-direction: column;
+    jsutify-content: center;
+    margin: 3rem 0;
+  }
+
+  .icon-container {
+    justify-content: center;
+  }
+
+  .language-item, .icon-container {
+    width: 100%;
+  }
+}
+
+/*@media screen and (max-width: 412px) {
     .language-container {
         margin: 3rem 0;
         width: 100%;
@@ -48,4 +64,4 @@
     .icon-container {
         justify-content: center;
     }
-}
+}*/

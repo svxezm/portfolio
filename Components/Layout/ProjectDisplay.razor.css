@@ -33,28 +33,24 @@ img {
     width: 390px;
 }
 
-@media all and (max-width: 412px) {
-    .project-displays {
-        width: 100%!important;
-    }
+@media screen and (max-width: 1000px) {
+  .project-displays {
+    margin: 0;
+    width: 100%;
+  }
 
-    .display-body {
-        flex-direction: column;
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-    }
+  .project-display {
+    width: 100%;
+  }
 }
 
-@media all and (max-width: 810px) {
-    .project-displays {
-        margin: 0;
-        width: 100%;
-    }
+@media screen and (max-width: 900px) {
+  img {
+    height: 100%;
+    width: 100%;
+  }
 
-    .project-display {
-        width: 100%;
-    }
+  .display-body {
+    flex-direction: column;
+  }
 }
