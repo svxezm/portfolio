@@ -1,0 +1,59 @@
+.topContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.contactArea {
+    display: flex;
+    flex-direction: column;
+    width: 30em;
+}
+
+.social {
+    text-align: left;
+}
+
+.linkIcon {
+    margin-right: 5px;
+}
+
+.pictureArea {
+    border-radius: 50%;
+    width: 20em;
+}
+
+.pictureArea img {
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .topContent {
+        flex-direction: column-reverse;
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contactArea {
+        width: 100%;
+    }
+
+    .social {
+        margin: auto;
+    }
+
+    .contactArea a {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .pictureArea {
+        width: 60%;
+        margin-bottom: 1rem;
+    }
+}
