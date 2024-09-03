@@ -62,14 +62,20 @@ export default function LanguageBlock() {
         `flex flex-col lg:flex-row lg:justify-evenly items-baseline text-center mx-auto w-[80%]`
     }>
             {labels.map((label, index) => (
-                <div className="flex flex-col flex-wrap mx-auto">
+                <div
+                    key={index}
+                    className="flex flex-col flex-wrap mx-auto"
+                >
                     <h3 className="w-full text-center">{label}</h3>
                     <div className={
                         `flex flex-wrap lg:justify-evenly m-auto mb-8 w-[80%]
                         justify-center`
                     }>
                         {iconPaths[index].map((icon, iconIndex) => (
-                            <div className="flex flex-col m-2">
+                            <div
+                                key={iconIndex}
+                                className="flex flex-col m-2"
+                            >
                                 <Image
                                     src={icon}
                                     alt={titles[index][iconIndex]}

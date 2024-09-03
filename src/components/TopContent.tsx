@@ -32,8 +32,8 @@ export default function TopContent() {
 
     return (
         <section className={
-            `mt-8 mb-16 flex items-center w-[90%] mx-auto
-            lg:text-left lg:flex-row lg:p-8
+            `mt-8 mb-16 flex items-center mx-auto
+        lg:text-left lg:flex-row lg:p-8 lg:justify-evenly
             flex-col-reverse p-0 text-center`
         }>
             <div className={
@@ -41,7 +41,7 @@ export default function TopContent() {
             }>
                 <h1 className="font-bold">Igor Borges Kühl</h1>
                 <h2>Desenvolvedor</h2>
-                <p className="my-4">
+                <p className="my-4 pr-12">
                     Estudo por conta própria pela internet com foco no aprendizado
                     para desenvolver páginas web e aplicativos cada ver melhores!
                 </p>
@@ -73,13 +73,13 @@ export default function TopContent() {
                 </div>
             </div>
             <div className={
-                `w-80 mx-auto`
+                `w-80`
             }>
                 <Image
                     src={profilePicture}
                     title="Foto de perfil"
                     alt="Foto de perfil"
-                    className="w-[90%] rounded-full drop-shadow-lg lg:ml-12 md:mx-auto md:mb-8"
+                    className="lg:w-full rounded-full drop-shadow-lg md:mx-auto mb-8 lg:m-0"
                 />
             </div>
         </section>
