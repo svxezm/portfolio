@@ -1,10 +1,19 @@
 import Image from "next/image";
-import TopContent from "@/components/TopContent/TopContent";
+import MainLayout from "@/components/MainLayout";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <TopContent />
+    <main
+    className="flex flex-col items-center justify-between p-0 md:p-8 lg:p-24"
+        style={{
+            backgroundImage: `url(/starry-background.png)`,
+            backgroundRepeat: "repeat-y",
+            backgroundAttachment: "scroll",
+            backgroundPosition: "top",
+            height: "100%"
+        }}
+    >
+        <MainLayout />
     </main>
   );
 }
