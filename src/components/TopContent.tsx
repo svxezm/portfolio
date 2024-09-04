@@ -41,7 +41,7 @@ export default function TopContent() {
             }>
                 <h1 className="font-bold">Igor Borges Kühl</h1>
                 <h2>Desenvolvedor</h2>
-                <p className="my-4 pr-12">
+                <p className="my-4 lg:pr-12">
                     Estudo por conta própria pela internet com foco no aprendizado
                     para desenvolver páginas web e aplicativos cada ver melhores!
                 </p>
@@ -79,7 +79,7 @@ export default function TopContent() {
                     src={profilePicture}
                     title="Foto de perfil"
                     alt="Foto de perfil"
-                    className="lg:w-full rounded-full drop-shadow-lg md:mx-auto mb-8 lg:m-0"
+                    className="lg:w-full rounded-full drop-shadow-lg lg:mx-auto mb-8 lg:m-0"
                 />
             </div>
         </section>
