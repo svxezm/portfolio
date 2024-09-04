@@ -44,7 +44,10 @@ export default function ProjectDisplay() {
         <section className="w-full mx-auto lg:w-[50em]">
             <h3 className="pb-3">Projetos</h3>
             {titles.map((title, index) => (
-                <div className="bg-[#f3d0fb40] w-full rounded-md p-4 mb-4 drop-shadow-lg">
+                <div
+                    key={index}
+                    className="bg-[#f3d0fb40] w-full rounded-md p-4 mb-4 drop-shadow-lg"
+                >
                     <div className="border-b border-b-[#450f57] mb-3 flex justify-between">
                         <h4>{title}</h4>
                     </div>
@@ -53,8 +56,8 @@ export default function ProjectDisplay() {
                             src={imagePaths[index]}
                             alt={titles[index]}
                             title={titles[index]}
-                            height="600"
-                            width="650"
+                            quality={100}
+                            unoptimized
                             className="h-full w-full lg:h-[300px] lg:w-[390px]"
                         />
                         <div className="p-3">
