@@ -3,6 +3,9 @@ import colorGenerator from "/assets/images/projects/color-generator.png";
 import ticTacToe from "/assets/images/projects/tic-tac-toe.png";
 import passwordGenerator from "/assets/images/projects/password-generator.png";
 import portfolio from "/assets/images/projects/portfolio.webp";
+import reactIcon from "/assets/images/icons/languages/react.webp";
+import tsIcon from "/assets/images/icons/languages/typescript.png";
+import csharpIcon from "/assets/images/icons/languages/c-sharp.png";
 
 export default function ProjectDisplay() {
     const projInfos = {
@@ -35,10 +38,16 @@ export default function ProjectDisplay() {
             "https://replit.com/join/yoieqhxyag-igorbkuhl",
             "https://replit.com/join/lgjoasfsjg-igorbkuhl",
             "#"
+        ],
+        languages: [
+            [reactIcon, tsIcon],
+            [csharpIcon],
+            [csharpIcon],
+            [reactIcon, tsIcon]
         ]
     }
 
-    const { titles, descriptions, imagePaths, projectLinks, deployedLinks } = projInfos;
+    const { titles, descriptions, imagePaths, projectLinks, deployedLinks, languages } = projInfos;
 
     return (
         <section className="w-full mx-auto lg:w-[50em]">
@@ -60,25 +69,49 @@ export default function ProjectDisplay() {
                             unoptimized
                             className="h-full w-full lg:h-[300px] lg:w-[390px]"
                         />
-                        <div className="p-3">
-                            <p>{descriptions[index]}</p>
-                            <p>
-                                Este projeto pode ser acessado por
+                        <div className="p-3 flex flex-col">
+                            <div>
+                                <p className="mb-4">{descriptions[index]}</p>
+                                <p>
+                                    Este projeto pode ser acessado por
+                                    <a
+                                        href={deployedLinks[index]}
+                                        target="_blank"
+                                        className="hover:text-[#4c1048]"
+                                    >
+                                        &nbsp;aqui
+                                    </a>.
+                                </p>
                                 <a
-                                    href={deployedLinks[index]}
+                                    href={projectLinks[index]}
                                     target="_blank"
-                                    className="hover:text-[#4c1048]"
+                                    className="underline hover:text-[#4c1048]"
                                 >
-                                    &nbsp;aqui
-                                </a>.
-                            </p>
-                            <a
-                                href={projectLinks[index]}
-                                target="_blank"
-                                className="underline hover:text-[#4c1048]"
-                            >
-                                Repositório do projeto.
-                            </a>
+                                    Repositório do projeto.
+                                </a>
+                            </div>
+                            <div className="flex flex-row-reverse mt-auto">
+                                {languages[index].map((lang, langIndex) => {
+                                    const altTitle = `Ícone ${
+                                        lang == reactIcon ? "React" :
+                                        lang == tsIcon ? "TypeScript" :
+                                        lang == csharpIcon ? "C#" :
+                                        "da linguagem"
+                                    }`;
+
+                                    return (
+                                            <Image
+                                                key={langIndex}
+                                                src={lang}
+                                                alt={altTitle}
+                                                title={altTitle}
+                                                height="30"
+                                                width="30"
+                                                className="ml-2"
+                                            />
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
