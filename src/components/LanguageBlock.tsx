@@ -85,6 +85,7 @@ export default function LanguageBlock() {
                                     title={titles[index][iconIndex]}
                                     height="80"
                                     width="80"
+                                    unoptimized
                                     className="max-h-[80px] max-w-[80px]"
                                 />
                                 <span className="text-center">{titles[index][iconIndex]}</span>
