@@ -1,30 +1,30 @@
 import Image from "next/image"
 import discordIcon from "/assets/images/icons/social/discord.webp";
-import whatsappIcon from "/assets/images/icons/social/whatsapp.webp";
 import githubIcon from "/assets/images/icons/social/github.webp";
+import linkedinIcon from "/assets/images/icons/social/linkedin.png";
 import profilePicture from "/assets/images/foto-de-perfil.png";
 
 export default function TopContent() {
     const contactInfo = {
         iconPaths: [
+            githubIcon,
             discordIcon,
-            whatsappIcon,
-            githubIcon
+            linkedinIcon
         ],
         titles: [
+            "Github",
             "Discord",
-            "WhatsApp",
-            "Github"
+            "Linkedin"
         ],
         urls: [
+            "https://github.com/monitzz",
             "https://discord.com/users/1201863684117504020",
-            "https://wa.me/5551995826812",
-            "https://github.com/monitzz"
+            "https://www.linkedin.com/in/igor-borges-k%C3%BChl-09b001257/"
         ],
         texts: [
+            "svxezm",
             "igorbkuhl",
-            "+55 51 99582-6812",
-            "svxezm"
+            "Igor Borges Kühl"
         ]
     }
 
@@ -52,7 +52,7 @@ export default function TopContent() {
                     {titles.map((title, index) => (
                         <div
                             key={index}
-                            className="flex items-center"
+                            className="flex items-center mb-1"
                         >
                             <Image
                                 src={iconPaths[index]}
