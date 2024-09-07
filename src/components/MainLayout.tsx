@@ -7,9 +7,11 @@ export default function MainLayout() {
         <div className={
             `lg:rounded-2xl bg-[#ffe5ed] w-screen lg:w-[70rem] p-8`
         }>
-            <TopContent />
-            <LanguageBlock />
-            <ProjectDisplay />
+            <div className="w-[80%] mx-auto">
+                <TopContent />
+                <LanguageBlock />
+                <ProjectDisplay />
+            </div>
         </div>
     )
 }
