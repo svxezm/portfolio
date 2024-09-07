@@ -5,38 +5,26 @@ import vueIcon from "/assets/images/icons/languages/vue.webp";
 import tsIcon from "/assets/images/icons/languages/typescript.png";
 import cssIcon from "/assets/images/icons/languages/css.png";
 import htmlIcon from "/assets/images/icons/languages/html.png";
-import pyIcon from "/assets/images/icons/languages/python.webp";
-import cppIcon from "/assets/images/icons/languages/cpp.png";
-import cIcon from "/assets/images/icons/languages/c.webp";
-import rustIcon from "/assets/images/icons/languages/rust.webp";
-import nixIcon from "/assets/images/icons/languages/nix.webp";
-import sqliteIcon from "/assets/images/icons/languages/sqlite.webp";
 
 export default function LanguageBlock() {
     const languageInfos = {
         labels: [
-            "Tenho conhecimento em",
-            "Pretendo estudar"
+            "Idiomas",
+            "Linguagens"
         ],
         iconPaths: [
-            [
-                csIcon,
-                reactIcon,
-                vueIcon,
-                tsIcon,
-                cssIcon,
-                htmlIcon
-            ],
-            [
-                pyIcon,
-                cppIcon,
-                cIcon,
-                rustIcon,
-                nixIcon,
-                sqliteIcon
-            ]
+            csIcon,
+            reactIcon,
+            vueIcon,
+            tsIcon,
+            cssIcon,
+            htmlIcon
         ],
         titles: [
+            [
+                "🇧🇷 Português Brasileiro - nativo",
+                "🇺🇸 Inglês - intermediário"
+            ],
             [
                 "C#",
                 "React",
@@ -44,14 +32,6 @@ export default function LanguageBlock() {
                 "TypeScript",
                 "CSS",
                 "HTML"
-            ],
-            [
-                "Python",
-                "C++",
-                "C",
-                "Rust",
-                "Nix",
-                "SQLite"
             ]
         ]
     }
@@ -61,37 +41,48 @@ export default function LanguageBlock() {
     return (
 
     <section className={
-        /*styles.languageContainer*/
-        `flex flex-col lg:flex-row lg:justify-evenly items-baseline text-center mx-auto w-[80%]`
+        `flex flex-col lg:justify-evenly items-baseline text-center 
+        mx-auto w-[80%]`
     }>
             {labels.map((label, index) => (
                 <div
                     key={index}
-                    className="flex flex-col flex-wrap mx-auto"
+                    className="flex flex-col flex-wrap mx-auto mb-16"
                 >
-                    <h3 className="w-full text-center">{label}</h3>
+                <h3 className="w-full text-center mb-4">{label}</h3>
+                {index === 0 ? (
+                    <div className="flex flex-col text-left">
+                    {titles[index].map((title, titleIndex) => (
+                        <p
+                            key={titleIndex}
+                            className="text-lg"
+                        >{title}</p>
+                    ))}
+                    </div>
+                ) : (
                     <div className={
                         `flex flex-wrap lg:justify-evenly m-auto mb-8 w-[80%]
                         justify-center`
                     }>
-                        {iconPaths[index].map((icon, iconIndex) => (
-                            <div
-                                key={iconIndex}
-                                className="flex flex-col m-2"
-                            >
-                                <Image
-                                    src={icon}
-                                    alt={titles[index][iconIndex]}
-                                    title={titles[index][iconIndex]}
-                                    height="80"
-                                    width="80"
-                                    unoptimized
-                                    className="max-h-[80px] max-w-[80px]"
-                                />
-                                <span className="text-center">{titles[index][iconIndex]}</span>
-                            </div>
-                        ))}
+                    {iconPaths.map((icon, iconIndex) => (
+                        <div
+                            key={iconIndex}
+                            className="flex flex-col m-2"
+                        >
+                            <Image
+                                src={icon}
+                                alt={titles[index][iconIndex]}
+                                title={titles[index][iconIndex]}
+                                height="80"
+                                width="80"
+                                unoptimized
+                                className="max-h-[80px] max-w-[80px]"
+                            />
+                            <span className="text-center">{titles[index][iconIndex]}</span>
+                        </div>
+                    ))}
                     </div>
+                )}
                 </div>
             ))}
         </section>
