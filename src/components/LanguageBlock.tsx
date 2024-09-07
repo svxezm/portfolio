@@ -42,16 +42,16 @@ export default function LanguageBlock() {
 
     <section className={
         `flex flex-col lg:justify-evenly items-baseline text-center 
-        mx-auto w-[80%]`
+    mx-auto lg:w-full lg:p-8`
     }>
             {labels.map((label, index) => (
                 <div
                     key={index}
-                    className="flex flex-col flex-wrap mx-auto mb-16"
+                    className="flex flex-col flex-wrap mx-auto lg:mx-0"
                 >
-                <h3 className="w-full text-center mb-4">{label}</h3>
+                <h3 className="w-full text-center lg:text-left mb-4">{label}</h3>
                 {index === 0 ? (
-                    <div className="flex flex-col text-left">
+                    <div className="flex flex-col lg:text-left mb-8">
                     {titles[index].map((title, titleIndex) => (
                         <p
                             key={titleIndex}
@@ -61,8 +61,8 @@ export default function LanguageBlock() {
                     </div>
                 ) : (
                     <div className={
-                        `flex flex-wrap lg:justify-evenly m-auto mb-8 w-[80%]
-                        justify-center`
+                        `flex flex-wrap lg:justify-evenly m-auto mb-8 w-[80%] lg:w-full
+                        justify-center lg:justify-start`
                     }>
                     {iconPaths.map((icon, iconIndex) => (
                         <div

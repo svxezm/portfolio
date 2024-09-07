@@ -32,7 +32,7 @@ export default function TopContent() {
 
     return (
         <section className={
-            `mt-8 mb-16 flex items-center mx-auto
+            `mt-8 mb-16 lg:mb-0 flex items-center mx-auto
         lg:text-left lg:flex-row lg:p-8 lg:justify-evenly
             flex-col-reverse p-0 text-center`
         }>
