@@ -17,7 +17,7 @@ export default function TopContent() {
             "Linkedin"
         ],
         urls: [
-            "https://github.com/monitzz",
+            "https://github.com/svxezm",
             "https://discord.com/users/1201863684117504020",
             "https://www.linkedin.com/in/igor-borges-k%C3%BChl-09b001257/"
         ],
