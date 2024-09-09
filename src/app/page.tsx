@@ -1,28 +1,40 @@
 "use client"
 
-import { useState } from "react";
-import Image from "next/image";
+import TranslationMenu from "@/components/TranslationMenu";
 import MainLayout from "@/components/MainLayout";
 
 export default function Home() {
-    const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
-
-    const toggleLangMenu = () => setIsLangMenuOpen(!isLangMenuOpen);
+    const nav = {
+        links: [
+            "Sobre",
+            "Linguagens",
+            "Projetos"
+        ],
+        ids: [
+            "#about",
+            "#languages",
+            "#projects"
+        ]
+    }
 
     return (
         <>
-            <header className="h-24 w-full bg-rose-200 drop-shadow-lg flex items-center justify-end">
-                <nav className="mr-8 relative">
-                    <button onClick={toggleLangMenu}>Idiomas</button>
-                    <div
-                    className={`
-                        absolute end-0 flex flex-col 
-                        overflow-hidden transition-all duration-300 bg-rose-300 
-                        ${isLangMenuOpen ? "max-h-72 p-4" : "max-h-0 p-0"}
-                    `}>
-                        <a href="#" className="mr-2">Português</a>
-                        <a href="#">English</a>
-                    </div>
+            <header className="h-24 w-full bg-rose-200 drop-shadow-lg flex items-center text-xl">
+                <nav className="w-[70rem] mx-auto flex justify-between items-center">
+                    <div>
+                    {nav.links.map((link, index) => (
+                        <a
+                            href={nav.ids[index]}
+                            className={`
+                                mr-8 hover:font-medium transition-all duration-300 
+                                before:content-['#'] before:text-wine before:mr-1 
+                                before:opacity-0 before:hover:opacity-50 
+                                before:transition-all before:duration-300
+                            `}
+                        >{link}</a>
+                    ))}
+                        </div>
+                    <TranslationMenu />
                 </nav>
             </header>
             <main
