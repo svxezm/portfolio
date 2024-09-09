@@ -50,7 +50,9 @@ export default function ProjectDisplay() {
     const { titles, descriptions, imagePaths, projectLinks, deployedLinks, languages } = projInfos;
 
     return (
-        <section className="w-full mx-auto lg:w-[50em]">
+        <section
+            id="projects"
+            className="w-full mx-auto lg:w-[50em]">
             <h3 className="pb-3">Projetos</h3>
             {titles.map((title, index) => (
                 <div

@@ -40,9 +40,11 @@ export default function LanguageBlock() {
 
     return (
 
-    <section className={
+    <section
+        id="languages"
+        className={
         `flex flex-col lg:justify-evenly items-baseline text-center 
-    mx-auto lg:w-full lg:p-8`
+        mx-auto lg:w-full lg:p-8`
     }>
             {labels.map((label, index) => (
                 <div

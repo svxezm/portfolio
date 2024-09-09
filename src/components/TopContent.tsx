@@ -31,9 +31,11 @@ export default function TopContent() {
     const { iconPaths, titles, urls, texts } = contactInfo;
 
     return (
-        <section className={
+        <section
+            id="about"
+            className={
             `mt-8 mb-16 lg:mb-0 flex items-center mx-auto
-        lg:text-left lg:flex-row lg:p-8 lg:justify-evenly
+            lg:text-left lg:flex-row lg:p-8 lg:justify-evenly
             flex-col-reverse p-0 text-center`
         }>
             <div className={
