@@ -22,19 +22,19 @@ export default function Home() {
             <header className="h-24 w-full bg-rose-200 drop-shadow-lg flex items-center text-xl">
                 <nav className="w-[70rem] mx-auto flex justify-between items-center">
                     <div>
-                    {nav.links.map((link, index) => (
-                        <a
-                            key={index}
-                            href={nav.ids[index]}
-                            className={`
-                                mr-8 hover:font-medium transition-all duration-300 
-                                before:content-['#'] before:text-wine before:mr-1 
-                                before:opacity-0 before:hover:opacity-50 
-                                before:transition-all before:duration-300
-                            `}
-                        >{link}</a>
-                    ))}
-                        </div>
+                        {nav.links.map((link, index) => (
+                            <a
+                                key={index}
+                                href={nav.ids[index]}
+                                className={`
+                                    mr-8 hover:font-medium transition-all duration-300 
+                                    before:content-['#'] before:text-wine before:mr-1 
+                                    before:opacity-0 before:hover:opacity-50 
+                                    before:transition-all before:duration-300
+                                `}
+                            >{link}</a>
+                        ))}
+                    </div>
                     <TranslationMenu />
                 </nav>
             </header>
