@@ -47,7 +47,7 @@ export default function TopContent() {
                     Estudo por conta própria pela internet com foco no aprendizado
                     para desenvolver páginas web e aplicativos cada ver melhores!
                 </p>
-                <p className="my-4 text-2xl">Contatos:</p>
+                <h3 className="my-4 text-2xl">Contatos</h3>
                 <div className={
                     `text-left mx-auto lg:m-0`
                 }>
