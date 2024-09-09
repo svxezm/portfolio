@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        @apply text-wine;
+    }
+
     h1 {
         @apply text-4xl;
     }
@@ -27,7 +31,7 @@
 }
 
 :root {
-    --wine: hsl(330.3, 60.8%, 28%);
+    --wine: 330.3deg 60.8% 28%;
     --dark-wine: hsl(330.3, 30.8%, 28%);
 }
 
@@ -42,6 +46,5 @@ html {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
-    color: var(--wine);
     overflow-x: hidden
 }
