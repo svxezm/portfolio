@@ -24,6 +24,7 @@ export default function Home() {
                     <div>
                     {nav.links.map((link, index) => (
                         <a
+                            key={index}
                             href={nav.ids[index]}
                             className={`
                                 mr-8 hover:font-medium transition-all duration-300 
