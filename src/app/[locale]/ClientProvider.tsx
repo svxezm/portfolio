@@ -1,14 +1,15 @@
 "use client"
 
+import { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 
 interface ClientProps {
     children: ReactNode;
-    locale: string;
+    locale: any;
     messages: string;
 }
 
-export default function ClientProvider({
+export default function ClientProps({
     children, locale, messages
 }: ClientProps) {
     return (
