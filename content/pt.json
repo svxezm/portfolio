@@ -1,0 +1,46 @@
+{
+  "Home": {
+    "header": {
+      "navigation": {
+        "about": "Sobre",
+        "languages": "Linguagens",
+        "projects": "Projetos"
+      },
+      "translations": "Traduções"
+    },
+    "main": {
+      "top": {
+        "subtitle": "Desenvolvedor",
+        "resume": "Estudo por conta própria pela internet com foco no aprendizado para desenvolver páginas web e aplicativos cada ver melhores!",
+        "contacts": "Contatos"
+      },
+      "languages": {
+        "titles": {
+          "idioms": "Idiomas",
+          "languages": "Linguagens"
+        },
+        "portugese": "🇧🇷 Português Brasileiro - nativo",
+        "english": "🇺🇸 Inglês - intermediário"
+      },
+      "projects": {
+        "titles": {
+          "colorGenerator": "Gerador de cores",
+          "ticTacToe": "Jogo da velha",
+          "passwordGenerator": "Gerador de senhas",
+          "portfolio": "Portfolio"
+        },
+        "descriptions": {
+          "colorGenerator": "Este projeto gera cores aleatórias em RGB e as converte para outros códigos de cores, basta apenas clicar no botão.",
+          "ticTacToe": "Um jogo que é aberto no terminal. Escolha X ou O e onde deseja colocar. Divirta-se. :)",
+          "passwordGenerator": "Um simples gerador de senhas. As senhas são geradas com 15 caracteres por padrão mas o comprimento pode ser ajustado no código. Todas as senhas são armazenadas no arquivo .txt, caso precise consultá-las depois.",
+          "portfolio": "E por último mas não menos importante, esta página de portfólio em que você está agora. :)"
+        },
+        "links": {
+          "deployed": "Este projeto pode ser acessado por ",
+          "here": "aqui",
+          "repository": "Repositório do projeto."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "Home": {
+    "header": {
+      "navigation": {
+        "about": "About me",
+        "languages": "Languages",
+        "projects": "Projects"
+      },
+      "translations": "Translations"
+    },
+    "main": {
+      "top": {
+        "subtitle": "Developer",
+        "resume": "I study on my own in the internet with focus on learning to develop better web pages and applications every time!",
+        "contacts": "Contacts"
+      },
+      "languages": {
+        "titles": {
+          "idioms": "Idioms",
+          "languages": "Languages"
+        },
+        "portugese": "🇧🇷 Brazilian Portugese - native",
+        "english": "🇺🇸 English - intermediary"
+      },
+      "projects": {
+        "titles": {
+          "colorGenerator": "Color generator",
+          "ticTacToe": "Tic tac toe",
+          "passwordGenerator": "Password generator",
+          "portfolio": "Portfolio"
+        },
+        "descriptions": {
+          "colorGenerator": "This project generates random RGB colors and convert them to other color codes, just need to click the button.",
+          "ticTacToe": "A console-based game. Choose X or O and where you wish to place it. Have fun. :)",
+          "passwordGenerator": "A simple password generator. The passwords are generated with a default length of 15 characters but it can be adjusted in the code. Each password is stored in the .txt file, just in case you need to check them later.",
+          "portfolio": "And last but not least, this portfolio page where you are now. :)"
+        },
+        "links": {
+          "deployed": "This project can be accessed over ",
+          "here": "here",
+          "repository": "Project repository."
+        }
+      }
+    }
+  }
+}
