@@ -68,6 +68,7 @@ export default function TopContent() {
                                 title={title}
                                 height="25"
                                 width="25"
+                                priority
                             />
                             <a
                                 href={urls[index]}
