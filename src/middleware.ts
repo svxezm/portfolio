@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
 const locales = ["pt", "en"];
@@ -8,7 +8,7 @@ const middleware = createMiddleware({
     defaultLocale: "pt",
 });
 
-export default function i18nMiddleware(request) {
+export default function i18nMiddleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname;
     const locale = pathname.split('/')[1];
 
