@@ -1,8 +1,12 @@
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 
 export default function TranslationMenu() {
     const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
+    const t = useTranslations("Home.header");
+    const translationText = t("translations");
 
     const toggleLangMenu = () => setIsLangMenuOpen(!isLangMenuOpen);
 
@@ -14,7 +18,7 @@ export default function TranslationMenu() {
                 <button
                     className="ml-6 inline-flex items-center"
                     onClick={toggleLangMenu}>
-                    Traduções
+                    {translationText}
                     <GlobeAltIcon className="ml-1 size-6 text-wine/50" />
                 </button>
                 <div
@@ -24,8 +28,8 @@ export default function TranslationMenu() {
                         ${isLangMenuOpen ? "max-h-24 p-4": "max-h-0 p-0"}
                     `}
                 >
-                    <a href="#">Português</a>
-                    <a href="#">English</a>
+                    <a href="/pt">Português</a>
+                    <a href="/en">English</a>
                 </div>
             </div>
         </>

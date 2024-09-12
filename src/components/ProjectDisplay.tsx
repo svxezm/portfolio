@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import colorGenerator from "/assets/images/projects/color-generator.png";
 import ticTacToe from "/assets/images/projects/tic-tac-toe.png";
@@ -8,18 +9,28 @@ import tsIcon from "/assets/images/icons/languages/typescript.png";
 import csharpIcon from "/assets/images/icons/languages/c-sharp.png";
 
 export default function ProjectDisplay() {
+    const t = useTranslations("Home.main.projects.titles");
+    const tTitle = useTranslations("Home.header.navigation");
+    const tDesc = useTranslations("Home.main.projects.descriptions");
+    const tLink = useTranslations("Home.main.projects.links");
+
+    const projectsTitle = tTitle("projects");
+    const deployed = tLink("deployed");
+    const here = tLink("here");
+    const repository = tLink("repository");
+
     const projInfos = {
         titles: [
-            "Gerador de cores",
-            "Jogo da velha",
-            "Gerador de senhas",
-            "Portfolio"
+            t("colorGenerator"),
+            t("ticTacToe"),
+            t("passwordGenerator"),
+            t("portfolio")
         ],
         descriptions: [
-            "Este projeto gera cores aleatórias em RGB e as converte para outros códigos de cores, basta apenas clicar no botão.",
-            "Um jogo que é aberto no terminal. Escolha X ou O e onde deseja colocar. Divirta-se. :)",
-            "Um simples gerador de senhas. As senhas são geradas com 15 caracteres por padrão mas o comprimento pode ser ajustado no código. Todas as senhas são armazenadas no arquivo .txt, caso precise consultá-las depois.",
-            "E por último mas não menos importante, esta página de portfólio em que você está agora. :)"
+            tDesc("colorGenerator"),
+            tDesc("ticTacToe"),
+            tDesc("passwordGenerator"),
+            tDesc("portfolio")
         ],
         imagePaths: [
             colorGenerator,
@@ -53,7 +64,7 @@ export default function ProjectDisplay() {
         <section
             id="projects"
             className="w-full mx-auto lg:w-[50em]">
-            <h3 className="pb-3">Projetos</h3>
+            <h3 className="pb-3">{projectsTitle}</h3>
             {titles.map((title, index) => (
                 <div
                     key={index}
@@ -75,13 +86,13 @@ export default function ProjectDisplay() {
                             <div>
                                 <p className="mb-4">{descriptions[index]}</p>
                                 <p>
-                                    Este projeto pode ser acessado por
+                                    {deployed}
                                     <a
                                         href={deployedLinks[index]}
                                         target="_blank"
-                                        className="hover:text-[#4c1048]"
+                                        className="underline hover:text-[#4c1048]"
                                     >
-                                        &nbsp;aqui
+                                        {here}
                                     </a>.
                                 </p>
                                 <a
@@ -89,7 +100,7 @@ export default function ProjectDisplay() {
                                     target="_blank"
                                     className="underline hover:text-[#4c1048]"
                                 >
-                                    Repositório do projeto.
+                                    {repository}
                                 </a>
                             </div>
                             <div className="flex flex-row-reverse mt-auto">

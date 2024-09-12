@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import csIcon from "/assets/images/icons/languages/c-sharp.png";
 import reactIcon from "/assets/images/icons/languages/react.webp";
@@ -7,10 +8,12 @@ import cssIcon from "/assets/images/icons/languages/css.png";
 import htmlIcon from "/assets/images/icons/languages/html.png";
 
 export default function LanguageBlock() {
+    const t = useTranslations("Home.main.languages");
+
     const languageInfos = {
         labels: [
-            "Idiomas",
-            "Linguagens"
+            t("titles.idioms"),
+            t("titles.languages")
         ],
         iconPaths: [
             csIcon,
@@ -22,8 +25,8 @@ export default function LanguageBlock() {
         ],
         titles: [
             [
-                "🇧🇷 Português Brasileiro - nativo",
-                "🇺🇸 Inglês - intermediário"
+                t("portugese"),
+                t("english")
             ],
             [
                 "C#",

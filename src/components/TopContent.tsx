@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image"
 import discordIcon from "/assets/images/icons/social/discord.webp";
 import githubIcon from "/assets/images/icons/social/github.webp";
@@ -5,6 +6,12 @@ import linkedinIcon from "/assets/images/icons/social/linkedin.png";
 import profilePicture from "/assets/images/foto-de-perfil.png";
 
 export default function TopContent() {
+    const t = useTranslations("Home.main.top");
+
+    const subtitle = t("subtitle");
+    const resume = t("resume");
+    const contacts = t("contacts");
+
     const contactInfo = {
         iconPaths: [
             githubIcon,
@@ -42,12 +49,11 @@ export default function TopContent() {
                 `flex flex-col w-[30em]`
             }>
                 <h1 className="font-bold">Igor Borges Kühl</h1>
-                <h2>Desenvolvedor</h2>
+                <h2>{subtitle}</h2>
                 <p className="my-4 lg:pr-12">
-                    Estudo por conta própria pela internet com foco no aprendizado
-                    para desenvolver páginas web e aplicativos cada ver melhores!
+                    {resume}
                 </p>
-                <h3 className="my-4 text-2xl">Contatos</h3>
+                <h3 className="my-4 text-2xl">{contacts}</h3>
                 <div className={
                     `text-left mx-auto lg:m-0`
                 }>
