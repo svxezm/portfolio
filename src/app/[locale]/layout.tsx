@@ -13,7 +13,12 @@ export const metadata: Metadata = {
     charset: "utf-8"
 };
 
-export default async function RootLayout({ children, params }) {
+export default async function RootLayout({
+    children, params
+}: Readonly<{
+    children: React.ReactNode;
+    params: any;
+}>) {
     const { locale } = params;
 
     if (!locales.includes(locale)) {
