@@ -25,7 +25,7 @@ export default function LanguageBlock() {
         ],
         titles: [
             [
-                t("portugese"),
+                t("portuguese"),
                 t("english")
             ],
             [
