@@ -9,12 +9,11 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Portfólio",
-    description: "Página portfolio de Igor Borges Kühl",
-    charset: "utf-8"
+    description: "Página portfolio de Igor Borges Kühl"
 };
 
 interface LayoutProps {
-    children: ReactNode;
+    children: React.ReactNode;
     params: {
         locale: string;
     };
