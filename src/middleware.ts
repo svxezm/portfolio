@@ -1,22 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 
-const locales = ["pt", "en"];
-
-const middleware = createMiddleware({
-    locales,
-    defaultLocale: "pt",
-});
-
 export default function i18nMiddleware(request: NextRequest) {
-    const pathname = request.nextUrl.pathname;
-    const locale = pathname.split('/')[1];
+    const { nextUrl } = request;
 
-    if (!locales.includes(locale)) {
-        return NextResponse.redirect(new URL(`/${locales[0]}`, request.url));
+    const locales = ["pt", "en"];
+    const defaultLocale = "pt";
+
+    const preferredLocale = request.headers.get("accept-language")?.split(",")[0].split("-")[0] || defaultLocale;
+
+    const locale = locales.includes(preferredLocale) ? preferredLocale : "en";
+
+    if (!locales.some((loc) => nextUrl.pathname.startsWith(`/${loc}`))) {
+        return NextResponse.redirect(new URL(`/${locale}${nextUrl.pathname}`, request.url));
     }
 
-    return middleware(request);
+    return createMiddleware({
+        locales,
+        defaultLocale
+    })(request);
 }
 
 export const config = {
