@@ -27,6 +27,6 @@ export default function middleware(request: NextRequest): NextResponse {
 }
 
 export const config = {
-    matcher: ["/((?!_next|api).*)"],
+    matcher: ["/((?!_next|api|favicon.ico|public).*)"],
 };
 
