@@ -17,7 +17,7 @@ export default function middleware(request: NextRequest): NextResponse {
 
     if (!locales.includes(urlLocale)) {
         const locale = locales.includes(preferredLocale) ? preferredLocale : "en";
-        return NextResponse.redirect(new URL(`/${locale}${pathname.replace(("/" + locale, ""))}`, request.url));
+        return NextResponse.redirect(new URL(`/${locale}${pathname.replace(`/${urlLocale}`, "")}`, request.url));
     }
 
     return createMiddleware({
