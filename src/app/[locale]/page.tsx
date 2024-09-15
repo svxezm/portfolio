@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import TranslationMenu from "@/components/TranslationMenu";
+import DarkModeButton from "@/components/DarkModeButton";
 import MainLayout from "@/components/MainLayout";
 import starryBackground from "/public/starry-background.png";
 
@@ -34,8 +35,13 @@ export default function Home() {
 
     return (
         <>
-            <header className="h-24 w-full bg-rose-200 drop-shadow-lg flex items-center text-xl">
+        <header className="h-24 w-full bg-rose-200 drop-shadow-lg flex items-center text-xl 
+        dark:bg-licorice">
                 <nav className="w-[70rem] px-4 lg:px-0 mx-auto flex justify-between items-center">
+                    <div className="flex items-baseline">
+                        <TranslationMenu />
+                        <DarkModeButton />
+                    </div>
                     <div>
                         {nav.links.map((link, index) => (
                             <a
@@ -50,7 +56,6 @@ export default function Home() {
                             >{link}</a>
                         ))}
                     </div>
-                    <TranslationMenu />
                 </nav>
             </header>
             <main

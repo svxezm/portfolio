@@ -68,7 +68,7 @@ export default function ProjectDisplay() {
             {titles.map((title, index) => (
                 <div
                     key={index}
-                    className="bg-[#f3d0fb40] w-full rounded-md p-4 mb-4 drop-shadow-lg"
+                    className="bg-[#f3d0fb40] dark:bg-[#631d4a40] w-full rounded-md p-4 mb-4 drop-shadow-lg"
                 >
                     <div className="border-b border-b-[#450f57] mb-3 flex justify-between">
                         <h4>{title}</h4>
