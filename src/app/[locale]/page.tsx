@@ -23,7 +23,7 @@ export default function Home() {
     return (
         <>
             <header className="h-24 w-full bg-rose-200 drop-shadow-lg flex items-center text-xl">
-                <nav className="w-[70rem] mx-auto flex justify-between items-center">
+                <nav className="w-[70rem] px-4 lg:px-0 mx-auto flex justify-between items-center">
                     <div>
                         {nav.links.map((link, index) => (
                             <a
