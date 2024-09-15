@@ -1,10 +1,15 @@
 "use client"
 
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import TranslationMenu from "@/components/TranslationMenu";
 import MainLayout from "@/components/MainLayout";
+import starryBackground from "/public/starry-background.png";
 
 export default function Home() {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const breakpoint = 1024;
+
     const t = useTranslations("Home.header.navigation");
 
     const nav = {
@@ -19,6 +24,15 @@ export default function Home() {
             "#projects"
         ]
     }
+
+    useEffect(() => {
+        const handleResizeWindow = () => setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", handleResizeWindow);
+
+        return () => {
+            window.removeEventListener("resize", handleResizeWindow);
+        }
+    }, []);
 
     return (
         <>
@@ -43,13 +57,17 @@ export default function Home() {
             </header>
             <main
                 className="h-full flex flex-col items-center justify-between p-0 lg:p-8 lg:p-24"
-                style={{
-                    backgroundImage: `url(/starry-background.png)`,
-                    backgroundRepeat: "repeat-y",
-                    backgroundAttachment: "scroll",
-                    backgroundPosition: "top",
-                    height: "100%"
-                }}
+                style={
+                    windowWidth >= breakpoint ? {
+                        backgroundImage: `url(${starryBackground.src})`,
+                        backgroundRepeat: "repeat-y",
+                        backgroundAttachment: "scroll",
+                        backgroundPosition: "top",
+                        height: "100%"
+                    } : {
+                        height: "100%"
+                    }
+                }
             >
                 <MainLayout />
             </main>
