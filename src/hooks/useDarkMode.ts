@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import $ from "jquery";
 
 export default function useDarkMode(initialState) {
     const [darkMode, setDarkMode] = useState(true);
