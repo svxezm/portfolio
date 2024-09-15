@@ -69,6 +69,7 @@ export default function TopContent() {
                                 height="25"
                                 width="25"
                                 priority
+                                className={index === 0 ? "invert-0 dark:invert" : ""}
                             />
                             <a
                                 href={urls[index]}
