@@ -7,8 +7,7 @@ import MainLayout from "@/components/MainLayout";
 import starryBackground from "/public/starry-background.png";
 
 export default function Home() {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const breakpoint = 1024;
+    const [isWindowLarge, setIsWindowLarge] = useState(false);
 
     const t = useTranslations("Home.header.navigation");
 
@@ -26,11 +25,10 @@ export default function Home() {
     }
 
     useEffect(() => {
-        const handleResizeWindow = () => setWindowWidth(window.innerWidth);
-        window.addEventListener("resize", handleResizeWindow);
+        const breakpoint = 1024;
 
-        return () => {
-            window.removeEventListener("resize", handleResizeWindow);
+        if (window.innerWidth >= breakpoint) {
+            setIsWindowLarge(true);
         }
     }, []);
 
@@ -58,7 +56,7 @@ export default function Home() {
             <main
                 className="h-full flex flex-col items-center justify-between p-0 lg:p-8 lg:p-24"
                 style={
-                    windowWidth >= breakpoint ? {
+                    isWindowLarge === true ? {
                         backgroundImage: `url(${starryBackground.src})`,
                         backgroundRepeat: "repeat-y",
                         backgroundAttachment: "scroll",
