@@ -16,10 +16,10 @@ export default function TranslationMenu() {
                 className="relative"
                 onMouseLeave={() => setIsLangMenuOpen(false)}>
                 <button
-                    className="ml-6 inline-flex items-center"
+                    className="mr-6 inline-flex items-center"
                     onClick={toggleLangMenu}>
+                    <GlobeAltIcon className="mr-1 size-6 text-wine/50 dark:text-bubblegum/50" />
                     {translationText}
-                    <GlobeAltIcon className="ml-1 size-6 text-wine/50" />
                 </button>
                 <div
                     className={`
