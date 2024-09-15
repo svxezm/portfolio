@@ -6,6 +6,9 @@
     html {
         @apply text-wine;
     }
+    html * {
+        @apply transition-all;
+    }
     html.dark {
         @apply text-bubblegum;
     }
