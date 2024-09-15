@@ -3,6 +3,8 @@
 import { ReactNode } from "react";
 import { NextIntlClientProvider, AbstractIntlMessages } from "next-intl";
 
+const timeZone = "Ameria/Bahia";
+
 interface ClientProps {
     children: ReactNode;
     locale: any;
@@ -13,7 +15,7 @@ export default function ClientProps({
     children, locale, messages
 }: ClientProps) {
     return (
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider timeZone={timeZone} locale={locale} messages={messages}>
             {children}
         </NextIntlClientProvider>
     )
