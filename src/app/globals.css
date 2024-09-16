@@ -4,13 +4,10 @@
 
 @layer base {
     html {
-        @apply text-wine;
+        @apply text-wine dark:text-bubblegum;
     }
     html * {
         @apply transition-all;
-    }
-    html.dark {
-        @apply text-bubblegum;
     }
 
     h1 {
