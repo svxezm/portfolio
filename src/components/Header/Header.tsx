@@ -1,14 +1,22 @@
+import { useTranslations } from "next-intl";
 import TranslationMenu from "@/components/Header/TranslationMenu";
 import DarkModeButton from "@/components/Header/DarkModeButton";
 
-interface HeaderProps {
-    nav: {
-        links: string[],
-        ids: string[],
-    }
-}
+export default function Header() {
+    const t = useTranslations("Home.header.navigation");
 
-export default function Header({ nav }: HeaderProps) {
+    const nav = {
+        links: [
+            t("about"),
+            t("languages"),
+            t("projects")
+        ],
+        ids: [
+            "#about",
+            "#languages",
+            "#projects"
+        ]
+    }
 
     return (
         <header className="h-24 w-full bg-rose-200 dark:bg-licorice drop-shadow-lg flex items-center text-xl">

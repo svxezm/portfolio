@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
 import Header from "@/components/Header/Header";
 import MainLayout from "@/components/Main/MainLayout";
 import starryBackground from "/public/starry-background.png";
@@ -9,20 +8,6 @@ import starryBackground from "/public/starry-background.png";
 export default function Home() {
     const [isWindowLarge, setIsWindowLarge] = useState(false);
 
-    const t = useTranslations("Home.header.navigation");
-
-    const nav = {
-        links: [
-            t("about"),
-            t("languages"),
-            t("projects")
-        ],
-        ids: [
-            "#about",
-            "#languages",
-            "#projects"
-        ]
-    }
 
     useEffect(() => {
         const breakpoint = 1024;
@@ -34,7 +19,7 @@ export default function Home() {
 
     return (
         <>
-            <Header nav={nav} />
+            <Header />
             <main
                 className="h-full flex flex-col items-center justify-between p-0 lg:p-8 lg:p-24"
                 style={
