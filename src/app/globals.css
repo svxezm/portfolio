@@ -6,6 +6,7 @@
     html {
         @apply text-wine dark:text-bubblegum;
     }
+
     html * {
         @apply transition-all;
     }
@@ -24,6 +25,10 @@
 
     h4 {
         @apply text-2xl;
+    }
+
+    a, button {
+        @apply hover:text-rose-950 dark:hover:text-rose-200;
     }
 }
 
