@@ -33,11 +33,6 @@
   }
 }
 
-:root {
-    --wine: 330.3deg 60.8% 28%;
-    --dark-wine: hsl(330.3, 30.8%, 28%);
-}
-
 * {
     padding: 0;
     margin: 0;
