@@ -2,7 +2,10 @@ import TranslationMenu from "@/components/TranslationMenu";
 import DarkModeButton from "@/components/DarkModeButton";
 
 interface HeaderProps {
-    nav: object,
+    nav: {
+        links: string[],
+        ids: string[],
+    }
 }
 
 export default function Header({ nav }: HeaderProps) {
