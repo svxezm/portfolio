@@ -99,7 +99,7 @@ export default function ProjectDisplay() {
                                 <a
                                     href={projectLinks[index]}
                                     target="_blank"
-                                    className="underline hover:text-[#4c1048]"
+                                    className="underline"
                                 >
                                     {repository}
                                 </a>
