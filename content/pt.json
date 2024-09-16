@@ -39,6 +39,10 @@
           "deployed": "Este projeto pode ser acessado por ",
           "here": "aqui",
           "repository": "Repositório do projeto."
+        },
+        "iconTitles": {
+          "main": "Ícone {title}",
+          "alt": "Ícone da linguagem"
         }
       }
     }

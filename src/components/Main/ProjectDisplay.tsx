@@ -13,6 +13,7 @@ export default function ProjectDisplay() {
     const tTitle = useTranslations("Home.header.navigation");
     const tDesc = useTranslations("Home.main.projects.descriptions");
     const tLink = useTranslations("Home.main.projects.links");
+    const tAlts = useTranslations("Home.main.projects.iconTitles");
 
     const projectsTitle = tTitle("projects");
     const deployed = tLink("deployed");
@@ -65,7 +66,7 @@ export default function ProjectDisplay() {
             id="projects"
             className="w-full mx-auto lg:w-[50em]">
             <h3 className="pb-3">{projectsTitle}</h3>
-            {titles.map((title, index) => (
+                {titles.map((title, index) => (
                 <div
                     key={index}
                     className="bg-[#f3d0fb40] dark:bg-[#631d4a40] w-full rounded-md p-4 mb-4 drop-shadow-lg"
@@ -105,23 +106,35 @@ export default function ProjectDisplay() {
                             </div>
                             <div className="flex flex-row-reverse mt-auto">
                                 {languages[index].map((lang, langIndex) => {
-                                    const altTitle = `Ícone ${
-                                        lang == reactIcon ? "React" :
-                                        lang == tsIcon ? "TypeScript" :
-                                        lang == csharpIcon ? "C#" :
-                                        "da linguagem"
-                                    }`;
+                                    let iconTitle = "";
+
+                                    switch(lang) {
+                                        case reactIcon:
+                                            iconTitle = "React";
+                                            break;
+                                        case tsIcon:
+                                            iconTitle = "TypeScript";
+                                            break;
+                                        case csharpIcon:
+                                            iconTitle = "C#";
+                                            break;
+                                        default:
+                                            iconTitle = tAlts("alt");
+                                            break;
+                                    };
+
+                                    const altTitle = tAlts("main", { title: iconTitle });
 
                                     return (
-                                            <Image
-                                                key={langIndex}
-                                                src={lang}
-                                                alt={altTitle}
-                                                title={altTitle}
-                                                height="30"
-                                                width="30"
-                                                className="ml-2"
-                                            />
+                                        <Image
+                                            key={langIndex}
+                                            src={lang}
+                                            alt={altTitle}
+                                            title={altTitle}
+                                            height="30"
+                                            width="30"
+                                            className="ml-2"
+                                        />
                                     );
                                 })}
                             </div>

@@ -39,6 +39,10 @@
           "deployed": "This project can be accessed over ",
           "here": "here",
           "repository": "Project repository."
+        },
+        "iconTitles": {
+          "main": "{title} icon",
+          "alt": "Language icon"
         }
       }
     }
