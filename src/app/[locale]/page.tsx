@@ -35,8 +35,7 @@ export default function Home() {
 
     return (
         <>
-        <header className="h-24 w-full bg-rose-200 drop-shadow-lg flex items-center text-xl 
-        dark:bg-licorice">
+        <header className="h-24 w-full bg-rose-200 dark:bg-licorice drop-shadow-lg flex items-center text-xl">
                 <nav className="w-[70rem] px-4 lg:px-0 mx-auto flex justify-between items-center">
                     <div className="flex items-baseline">
                         <TranslationMenu />
@@ -48,10 +47,7 @@ export default function Home() {
                                 key={index}
                                 href={nav.ids[index]}
                                 className={`
-                                    mr-8 hover:font-medium transition-all duration-300 
-                                    before:content-['#'] before:text-wine before:mr-1 
-                                    before:opacity-0 before:hover:opacity-50 
-                                    before:transition-all before:duration-300
+                                    mr-8 hover:text-rose-900 dark:hover:text-rose-200 transition-all duration-300 
                                 `}
                             >{link}</a>
                         ))}
