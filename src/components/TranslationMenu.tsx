@@ -36,14 +36,8 @@ export default function TranslationMenu() {
                         ${isLangMenuOpen ? "max-h-24 p-4": "max-h-0 p-0"}
                     `}
                 >
-                    <a
-                        href="/pt"
-                        className="hover:text-rose-900 dark:hover:text-rose-200"
-                    >Português</a>
-                    <a
-                        href="/en"
-                        className="hover:text-rose-900 dark:hover:text-rose-200"
-                    >English</a>
+                    <a href="/pt">Português</a>
+                    <a href="/en">English</a>
                 </div>
             </div>
         </>
