@@ -15,9 +15,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-          "wine": "hsl(var(--wine))",
+          "wine": "#731c47",
+          "bubblegum": "#e38cb8",
           "licorice": "#1a0008",
-          "bubblegum": "#cea1b7",
+          "pink-light": "#ffe5ed",
+          "purple-dark": "#2b012a",
       },
     },
   },
