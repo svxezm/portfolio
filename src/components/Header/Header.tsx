@@ -1,5 +1,5 @@
-import TranslationMenu from "@/components/TranslationMenu";
-import DarkModeButton from "@/components/DarkModeButton";
+import TranslationMenu from "@/components/Header/TranslationMenu";
+import DarkModeButton from "@/components/Header/DarkModeButton";
 
 interface HeaderProps {
     nav: {

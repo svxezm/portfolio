@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import Header from "@/components/Header";
-import MainLayout from "@/components/MainLayout";
+import Header from "@/components/Header/Header";
+import MainLayout from "@/components/Main/MainLayout";
 import starryBackground from "/public/starry-background.png";
 
 export default function Home() {
