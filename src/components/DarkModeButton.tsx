@@ -8,7 +8,8 @@ export default function DarkModeButton() {
     return (
         <button
             onClick={switchTheme}
-            className="rounded-full text-wine/50 dark:text-bubblegum/50 hover:text-wine dark:hover:text-bubblegum p-2 transition">
+            className="rounded-full text-wine/50 dark:text-bubblegum/50 
+            hover:text-amber-500 dark:hover:text-slate-300 p-2 transition">
         {darkMode === false ? (
             <Sun />
         ) : (
