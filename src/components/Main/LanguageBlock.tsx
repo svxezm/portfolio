@@ -49,11 +49,11 @@ export default function LanguageBlock() {
         `flex flex-col lg:justify-evenly items-baseline text-center 
         mx-auto lg:w-full lg:p-8`
     }>
-            {labels.map((label, index) => (
-                <div
-                    key={index}
-                    className="flex flex-col flex-wrap mx-auto lg:mx-0"
-                >
+        {labels.map((label, index) => (
+            <div
+                key={index}
+                className="flex flex-col flex-wrap mx-auto lg:mx-0"
+            >
                 <h3 className="w-full text-center lg:text-left mb-4">{label}</h3>
                 {index === 0 ? (
                     <div className="flex flex-col lg:text-left mb-8">
