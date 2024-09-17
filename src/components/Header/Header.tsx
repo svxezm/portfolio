@@ -19,7 +19,7 @@ export default function Header() {
     }
 
     return (
-        <header className="h-24 w-full bg-rose-200 dark:bg-licorice drop-shadow-lg flex items-center text-xl">
+        <header className="sticky top-0 z-10 h-24 w-full bg-rose-200 dark:bg-licorice drop-shadow-lg flex items-center text-xl">
             <nav className="w-[70rem] px-4 lg:px-0 mx-auto flex justify-between items-center">
                 <div className="flex items-baseline">
                     <TranslationMenu />
