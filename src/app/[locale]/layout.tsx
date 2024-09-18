@@ -2,6 +2,7 @@ import "../globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
+import { ThemeProvider } from "next-themes";
 import { locales,  getMessages } from "@/src/i18n";
 import ClientProvider from "./ClientProvider";
 
@@ -31,11 +32,16 @@ export default async function RootLayout({
     const messages = await getMessages(locale);
 
     return (
-        <html lang={locale}>
+        <html lang={locale} suppressHydrationWarning>
             <body className={montserrat.className}>
-                <ClientProvider locale={locale} messages={messages}>
-                    {children}
-                </ClientProvider>
+                <ThemeProvider
+                    attribute="class"
+                    enableSystem={true}
+                    defaultTheme="light">
+                    <ClientProvider locale={locale} messages={messages}>
+                        {children}
+                    </ClientProvider>
+                </ThemeProvider>
             </body>
         </html>
     );
