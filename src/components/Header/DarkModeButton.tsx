@@ -1,20 +1,30 @@
-import { useState } from "react";
-import useDarkMode from "@/hooks/useDarkMode";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import { MoonStar, Sun } from "lucide-react";
 
 export default function DarkModeButton() {
-    const { darkMode, switchTheme } = useDarkMode();
+    const [mounted, setMounted] = useState(false);
+    const { systemTheme, theme, setTheme } = useTheme();
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return <div style={{ height: "32px", width: "32px" }} />;
+    }
 
     return (
         <button
-            onClick={switchTheme}
+            onClick={() => theme == "dark" ? setTheme("light") : setTheme("dark")}
             className="rounded-full text-wine/50 dark:text-bubblegum/50 
             hover:text-amber-500 dark:hover:text-slate-300 p-2 transition">
-        {darkMode === false ? (
-            <Sun />
-        ) : (
-            <MoonStar />
-        )}
+            {currentTheme === "light" ? (
+                <Sun />
+            ) : (
+                <MoonStar />
+            )}
         </button>
     )
 }
