@@ -1,6 +1,6 @@
-import TopContent from "@/components/Main/TopContent";
-import LanguageBlock from "@/components/Main/LanguageBlock";
-import ProjectDisplay from "@/components/Main/ProjectDisplay";
+import TopContent from "./TopContent";
+import LanguageBlock from "./Languages/LanguageBlock";
+import ProjectDisplay from "./ProjectDisplay";
 
 export default function MainLayout() {
     return (
