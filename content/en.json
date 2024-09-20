@@ -32,7 +32,7 @@
         "descriptions": {
           "colorGenerator": "This project generates random RGB colors and convert them to other color codes, just need to click the button.",
           "ticTacToe": "A console-based game. Choose X or O and where you wish to place it. Have fun. :)",
-          "passwordGenerator": "A simple password generator. The passwords are generated with a default length of 15 characters but it can be adjusted in the code. Each password is stored in the .txt file, just in case you need to check them later.",
+          "passwordGenerator": "A simple password generator. The passwords can be created, cleared and listed using the arguments listed in the documentation. Each password is stored in the .txt file, just in case you need to check them later.",
           "portfolio": "And last but not least, this portfolio page where you are now. :)"
         },
         "links": {
