@@ -3,17 +3,17 @@ import Image, { StaticImageData } from "next/image";
 
 interface LanguageItemProps {
     icon: StaticImageData;
-    alt: string;
+    text: string;
 }
 
-    export default const LanguageItem: React.FC<LanguageItemProps> = ({ icon, text }) => {
+export default function LanguageItem({ icon, text }: LanguageItemProps) {
     const [isHover, setIsHover] = useState(false);
 
     return (
         <div
             className="relative">
             <Image
-                src={icon.src}
+                src={icon}
                 alt={text}
                 height="80"
                 width="80"
