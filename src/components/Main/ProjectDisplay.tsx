@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import colorGenerator from "/assets/images/projects/color-generator.png";
 import ticTacToe from "/assets/images/projects/tic-tac-toe.png";
-import passwordGenerator from "/assets/images/projects/password-generator.png";
+import passwordGenerator from "/assets/images/projects/password-generator.webp";
 import portfolio from "/assets/images/projects/portfolio.webp";
 import reactIcon from "/assets/images/icons/languages/react.webp";
 import tsIcon from "/assets/images/icons/languages/typescript.png";
