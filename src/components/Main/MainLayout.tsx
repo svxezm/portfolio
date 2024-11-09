@@ -1,4 +1,5 @@
 import TopContent from "./TopContent";
+import Qualifications from "./Qualifications";
 import LanguageBlock from "./Languages/LanguageBlock";
 import ProjectDisplay from "./ProjectDisplay";
 
@@ -9,6 +10,7 @@ export default function MainLayout() {
         }>
             <div className="w-[80%] mx-auto">
                 <TopContent />
+                <Qualifications />
                 <LanguageBlock />
                 <ProjectDisplay />
             </div>
