@@ -44,7 +44,15 @@
           "main": "{title} icon",
           "alt": "Language icon"
         }
+      },
+      "qualifications": {
+        "title": "Qualifications",
+        "certificates": {
+          "frontEnd": "Front End Developer (02/2023 - 11/2023)",
+          "fullStackPython": "Full Stack Python (07/2024 - ongoing)"
+        }
       }
+
     }
   }
 }
