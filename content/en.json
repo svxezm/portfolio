@@ -48,11 +48,16 @@
       "qualifications": {
         "title": "Qualifications",
         "certificates": {
-          "frontEnd": "Front End Developer (02/2023 - 11/2023)",
-          "fullStackPython": "Full Stack Python (07/2024 - ongoing)"
+          "frontEnd": {
+            "title": "Front End Developer",
+            "date": "(02/2023 - 11/2023)"
+          },
+          "fullStackPython": {
+            "title": "Full Stack Python",
+            "date": "(07/2024 - ongoing)"
+          } 
         }
       }
-
     }
   }
 }

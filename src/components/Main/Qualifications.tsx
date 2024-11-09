@@ -17,12 +17,15 @@ export default function Qualifications() {
 
     const certificates = [
         {
-            name: t("certificates.frontEnd"),
-            path: frontEnd
+            name: t("certificates.frontEnd.title"),
+            path: frontEnd,
+            date: t("certificates.frontEnd.date")
         },
         {
-            name: t("certificates.fullStackPython"),
-            path: fullStackPython
+            name: t("certificates.fullStackPython.title"),
+            path: fullStackPython,
+            date: t("certificates.fullStackPython.date"),
+
         }
     ];
 
@@ -42,10 +45,12 @@ export default function Qualifications() {
             >{t("title")}</h3>
             <ul>
             {certificates.map((certificate, index) => (
-                <li key={index}>
-                    <button onClick={() => openModal(certificate)}>
-                        {certificate.name}
-                    </button>
+                <li
+                  key={index}
+                  className="mb-2 hover:text-rose-950 dark:hover:text-rose-200"
+                  onClick={() => openModal(certificate)}>
+                    <h4 className="lg:text-left">{certificate.name}</h4>
+                    <time className="italic text-sm text-center lg:text-left">{certificate.date}</time>
                 </li>
             ))}
             </ul>
