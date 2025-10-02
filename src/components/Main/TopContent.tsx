@@ -3,7 +3,7 @@ import Image from "next/image"
 import discordIcon from "/assets/images/icons/social/discord.webp";
 import githubIcon from "/assets/images/icons/social/github.webp";
 import linkedinIcon from "/assets/images/icons/social/linkedin.png";
-import profilePicture from "/assets/images/foto-de-perfil.png";
+import profilePicture from "/assets/images/foto-de-perfil.jpg";
 
 export default function TopContent() {
     const t = useTranslations("Home.main.top");
