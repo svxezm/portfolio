@@ -1,86 +1,78 @@
 import { useTranslations } from "next-intl";
 import LanguageItem from "./LanguageItem";
-import csIcon from "/assets/images/icons/languages/c-sharp.png";
-import reactIcon from "/assets/images/icons/languages/react.webp";
-import vueIcon from "/assets/images/icons/languages/vue.webp";
 import tsIcon from "/assets/images/icons/languages/typescript.png";
-import cssIcon from "/assets/images/icons/languages/css.png";
-import htmlIcon from "/assets/images/icons/languages/html.png";
+import reactIcon from "/assets/images/icons/languages/react.webp";
+import rustIcon from "/assets/images/icons/languages/rust.png";
+import cIcon from "/assets/images/icons/languages/c.png";
+import cppIcon from "/assets/images/icons/languages/cpp.png";
+import csharpIcon from "/assets/images/icons/languages/c-sharp.png";
 
 export default function LanguageBlock() {
     const t = useTranslations("Home.main.languages");
+    const title = t("titles.languages");
 
-    const languageInfos = {
-        labels: [
-            t("titles.idioms"),
-            t("titles.languages")
-        ],
-        iconPaths: [
-            csIcon,
-            reactIcon,
-            vueIcon,
-            tsIcon,
-            cssIcon,
-            htmlIcon
-        ],
-        titles: [
-            [
-                t("portuguese"),
-                t("english")
+    const languageInfo = [
+        {
+            label: "Main",
+            icons: [
+                tsIcon,
+                reactIcon,
+                rustIcon
             ],
-            [
-                "C#",
-                "React",
-                "Vue",
+            titles: [
                 "TypeScript",
-                "CSS",
-                "HTML"
+                "React",
+                "Rust"
             ]
-        ]
-    }
-
-    const { labels, iconPaths, titles } = languageInfos;
+        },
+        {
+            label: "Functional",
+            icons: [
+                cIcon,
+                cppIcon,
+                csharpIcon
+            ],
+            titles: [
+                "C",
+                "C++",
+                "C#"
+            ]
+        }
+    ];
 
     return (
-
-    <section
-        id="languages"
-        className={
-        `flex flex-col lg:justify-evenly items-baseline text-center 
-        mx-auto lg:w-full lg:p-8`
-    }>
-        {labels.map((label, index) => (
-            <div
-                key={index}
-                className="flex flex-col flex-wrap mx-auto lg:mx-0"
-            >
-                <h3 className="w-full text-center lg:text-left mb-4">{label}</h3>
-                {index === 0 ? (
-                    <div className="flex flex-col lg:text-left mb-8">
-                    {titles[index].map((title, titleIndex) => (
-                        <p
-                            key={titleIndex}
-                            className="text-lg"
-                        >{title}</p>
-                    ))}
-                    </div>
-                ) : (
-                    <div className={
-                        `flex flex-wrap lg:justify-evenly m-auto mb-8 w-[80%] lg:w-full
-                        justify-center lg:justify-start`
-                    }>
-                    {iconPaths.map((icon, iconIndex) => (
+        <section
+            id="languages"
+            className={
+            `flex flex-col lg:justify-evenly items-baseline text-center
+            mx-auto lg:w-full lg:px-8 mb-12 lg:mb-8`
+        }>
+            <div className="flex flex-col flex-wrap mx-auto lg:mx-0 w-full">
+                <h3 className="w-full text-center lg:text-left mb-4 w-fit">{title}</h3>
+                <div className="flex flex-col lg:flex-row justify-between">
+                    {languageInfo.map((info, index) => (
                         <div
-                            key={iconIndex}
-                            className="flex flex-col mb-12 mx-2 lg:m-2"
+                            key={index}
+                            className={
+                                `flex flex-col flex-wrap lg:justify-evenly m-auto mb-4 w-fit
+                                justify-center lg:justify-start`
+                            }
                         >
-                            <LanguageItem icon={icon} text={titles[index][iconIndex]} />
+                            <h4>{info.label}</h4>
+                            <div className="flex flex-row">
+                                {info.icons.map((icon, iconIndex) => (
+                                    <div
+                                        key={iconIndex}
+                                        className="flex flex-col mx-2 lg:m-2"
+                                    >
+                                        <LanguageItem icon={icon} text={info.titles[iconIndex]} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     ))}
-                    </div>
-                )}
                 </div>
-            ))}
+            </div>
         </section>
     )
 }

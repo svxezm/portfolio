@@ -25,7 +25,7 @@ export default function LanguageItem({ icon, text }: LanguageItemProps) {
             <span
                 className={`absolute -translate-x-1/2 mt-2 whitespace-normal 
                     rounded-lg bg-purple-dark/75 dark:bg-licorice py-1.5 px-3 text-sm 
-                    text-rose-200 transition-opacity select-none z-10 
+                    text-rose-200 transition-opacity select-none z-10 text-nowrap
                     ${!isHover ? "opacity-0" : "opacity-100"}
                 `}>
                 {text}
