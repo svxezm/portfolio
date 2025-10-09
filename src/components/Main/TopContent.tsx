@@ -53,7 +53,7 @@ export default function TopContent() {
                 <p className="my-4 lg:pr-12">
                     {resume}
                 </p>
-                <h3 className="my-4 text-2xl">{contacts}</h3>
+                <h3 className="my-4">{contacts}</h3>
                 <div className={
                     `text-left mx-auto lg:m-0`
                 }>
