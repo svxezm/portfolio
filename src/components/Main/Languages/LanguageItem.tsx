@@ -8,6 +8,7 @@ interface LanguageItemProps {
 
 export default function LanguageItem({ icon, text }: LanguageItemProps) {
     const [isHover, setIsHover] = useState(false);
+    const size = 80;
 
     return (
         <div
@@ -15,12 +16,12 @@ export default function LanguageItem({ icon, text }: LanguageItemProps) {
             <Image
                 src={icon}
                 alt={text}
-                height="80"
-                width="80"
+                height={`${size}`}
+                width={`${size}`}
                 unoptimized
                 onMouseOver={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
-                className="max-h-[80px] max-w-[80px] hover:scale-110"
+                className={`h-[${size}px] w-[${size}px] hover:scale-110`}
             />
             <span
                 className={`absolute -translate-x-1/2 mt-2 whitespace-normal 
