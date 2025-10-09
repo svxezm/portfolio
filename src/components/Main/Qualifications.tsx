@@ -38,7 +38,7 @@ export default function Qualifications() {
         <section
         className={
             `lg:justify-evenly items-baseline text-center lg:text-left
-            mx-auto lg:w-full lg:px-8 mb-16 lg:mb-4`
+            mx-auto lg:w-full lg:px-8 mb-16 lg:mb-8`
         }>
             <h3
                 className="mb-4"
@@ -47,7 +47,9 @@ export default function Qualifications() {
             {certificates.map((certificate, index) => (
                 <li
                   key={index}
-                  className="mb-2 hover:text-rose-950 dark:hover:text-rose-200"
+                  className={`
+                      mb-2 hover:text-rose-950 dark:hover:text-rose-200 cursor-pointer w-fit sm:m-auto lg:m-0
+                  `}
                   onClick={() => openModal(certificate)}>
                     <h4 className="lg:text-left">{certificate.name}</h4>
                     <time className="italic text-sm text-center lg:text-left">{certificate.date}</time>
