@@ -1,11 +1,11 @@
 import { useTranslations } from "next-intl";
 import LanguageItem from "./LanguageItem";
-import tsIcon from "/assets/images/icons/languages/typescript.png";
-import reactIcon from "/assets/images/icons/languages/react.webp";
-import rustIcon from "/assets/images/icons/languages/rust.png";
-import cIcon from "/assets/images/icons/languages/c.png";
-import cppIcon from "/assets/images/icons/languages/cpp.png";
-import csharpIcon from "/assets/images/icons/languages/c-sharp.png";
+import tsIcon from "/assets/images/icons/languages/typescript.svg";
+import reactIcon from "/assets/images/icons/languages/react.svg";
+import rustIcon from "/assets/images/icons/languages/rust.svg";
+import cIcon from "/assets/images/icons/languages/c.svg";
+import cppIcon from "/assets/images/icons/languages/cpp.svg";
+import csharpIcon from "/assets/images/icons/languages/c-sharp.svg";
 
 export default function LanguageBlock() {
     const t = useTranslations("Home.main.languages");
