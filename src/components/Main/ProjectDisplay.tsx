@@ -1,12 +1,14 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import colorGenerator from "/assets/images/projects/color-generator.png";
+import pls from "/assets/images/projects/pls.jpg";
 import ticTacToe from "/assets/images/projects/tic-tac-toe.png";
 import passwordGenerator from "/assets/images/projects/password-generator.webp";
 import portfolio from "/assets/images/projects/portfolio.webp";
-import reactIcon from "/assets/images/icons/languages/react.webp";
-import tsIcon from "/assets/images/icons/languages/typescript.png";
-import csharpIcon from "/assets/images/icons/languages/c-sharp.png";
+import reactIcon from "/assets/images/icons/languages/react.svg";
+import tsIcon from "/assets/images/icons/languages/typescript.svg";
+import csharpIcon from "/assets/images/icons/languages/c-sharp.svg";
+import rustIcon from "/assets/images/icons/languages/rust.svg";
 
 export default function ProjectDisplay() {
     const t = useTranslations("Home.main.projects.titles");
@@ -20,84 +22,87 @@ export default function ProjectDisplay() {
     const here = tLink("here");
     const repository = tLink("repository");
 
-    const projInfos = {
-        titles: [
-            t("colorGenerator"),
-            t("ticTacToe"),
-            t("passwordGenerator"),
-            t("portfolio")
-        ],
-        descriptions: [
-            tDesc("colorGenerator"),
-            tDesc("ticTacToe"),
-            tDesc("passwordGenerator"),
-            tDesc("portfolio")
-        ],
-        imagePaths: [
-            colorGenerator,
-            ticTacToe,
-            passwordGenerator,
-            portfolio
-        ],
-        projectLinks: [
-            "https://github.com/svxezm/color-generator",
-            "https://github.com/svxezm/tic-tac-toe",
-            "https://github.com/svxezm/password-generator",
-            "https://github.com/svxezm/portfolio"
-        ], 
-        deployedLinks: [
-            "https://color-generator-gqnc8z0th-igor-borges-projects-6e496d8b.vercel.app",
-            "https://replit.com/join/yoieqhxyag-igorbkuhl",
-            "https://replit.com/join/lgjoasfsjg-igorbkuhl",
-            "#"
-        ],
-        languages: [
-            [reactIcon, tsIcon],
-            [csharpIcon],
-            [csharpIcon],
-            [reactIcon, tsIcon]
-        ]
-    }
-
-    const { titles, descriptions, imagePaths, projectLinks, deployedLinks, languages } = projInfos;
+    const projectInfo = [
+        {
+            title: t("colorGenerator"),
+            description: tDesc("colorGenerator"),
+            imagePath: colorGenerator,
+            projectLink: "https://github.com/svxezm/color-generator",
+            deployedLink: "https://color-generator-gqnc8z0th-igor-borges-projects-6e496d8b.vercel.app",
+            languages: [reactIcon, tsIcon]
+        },
+        {
+            title: t("pls"),
+            description: tDesc("pls"),
+            imagePath: pls,
+            projectLink: "https://github.com/svxezm/pls",
+            languages: [rustIcon]
+        },
+        {
+            title: t("ticTacToe"),
+            description: tDesc("ticTacToe"),
+            imagePath: ticTacToe,
+            projectLink: "https://github.com/svxezm/tic-tac-toe",
+            deployedLink: "https://replit.com/join/yoieqhxyag-igorbkuhl",
+            languages: [csharpIcon]
+        },
+        {
+            title: t("passwordGenerator"),
+            description: tDesc("passwordGenerator"),
+            imagePath: passwordGenerator,
+            projectLink: "https://github.com/svxezm/password_generator",
+            deployedLink: "https://replit.com/join/lgjoasfsjg-igorbkuhl",
+            languages: [csharpIcon]
+        },
+        {
+            title: t("portfolio"),
+            description: tDesc("portfolio"),
+            imagePath: portfolio,
+            projectLink: "https://github.com/svxezm/portfolio",
+            deployedLink: "#",
+            languages: [reactIcon, tsIcon]
+        },
+    ];
 
     return (
         <section
             id="projects"
             className="w-full mx-auto lg:w-[50em]">
             <h3 className="pb-3">{projectsTitle}</h3>
-                {titles.map((title, index) => (
+                {projectInfo.map((project, index) => (
                 <div
                     key={index}
                     className="bg-[#f3d0fb40] dark:bg-[#631d4a40] w-full rounded-md p-4 mb-4 drop-shadow-lg"
                 >
                     <div className="border-b border-b-[#450f57] mb-3 flex justify-between">
-                        <h4>{title}</h4>
+                        <h4>{project.title}</h4>
                     </div>
                     <div className="flex flex-col lg:flex-row">
                         <Image
-                            src={imagePaths[index]}
-                            alt={titles[index]}
-                            title={titles[index]}
+                            src={project.imagePath}
+                            alt={project.title}
+                            title={project.title}
                             quality={100}
                             unoptimized
                             className="h-full w-full lg:h-[300px] lg:w-[390px]"
                         />
                         <div className="p-3 flex flex-col">
                             <div>
-                                <p className="mb-4">{descriptions[index]}</p>
-                                <p>
-                                    {deployed}
-                                    <a
-                                        href={deployedLinks[index]}
-                                        target="_blank"
-                                        className="underline hover:text-[#4c1048]"
-                                    >
-                                        {here}
-                                    </a>.
-                                </p>
+                                <p className="mb-4">{project.description}</p>
+                                {project.deployedLink && (
+                                    <p>
+                                        {deployed}
+                                        <a
+                                            href={project.deployedLink}
+                                            target="_blank"
+                                            className="underline hover:text-[#4c1048]"
+                                        >
+                                            {here}
+                                        </a>.
+                                    </p>
+                                )}
                                 <a
-                                    href={projectLinks[index]}
+                                    href={project.projectLink}
                                     target="_blank"
                                     className="underline"
                                 >
@@ -105,23 +110,20 @@ export default function ProjectDisplay() {
                                 </a>
                             </div>
                             <div className="flex flex-row-reverse mt-auto">
-                                {languages[index].map((lang, langIndex) => {
-                                    let iconTitle = "";
+                                {project.languages.map((lang, langIndex) => {
+                                    let iconTitle = (() => {
+                                        switch(lang) {
+                                            case reactIcon:
+                                                return "React";
+                                            case tsIcon:
+                                                return "TypeScript";
+                                            case csharpIcon:
+                                                return "C#";
+                                            default:
+                                                return tAlts("alt");
+                                        };
 
-                                    switch(lang) {
-                                        case reactIcon:
-                                            iconTitle = "React";
-                                            break;
-                                        case tsIcon:
-                                            iconTitle = "TypeScript";
-                                            break;
-                                        case csharpIcon:
-                                            iconTitle = "C#";
-                                            break;
-                                        default:
-                                            iconTitle = tAlts("alt");
-                                            break;
-                                    };
+                                    })();
 
                                     const altTitle = tAlts("main", { title: iconTitle });
 

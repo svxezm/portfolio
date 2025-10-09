@@ -25,12 +25,14 @@
       "projects": {
         "titles": {
           "colorGenerator": "Gerador de cores",
+          "pls": "pls",
           "ticTacToe": "Jogo da velha",
           "passwordGenerator": "Gerador de senhas",
           "portfolio": "Portfolio"
         },
         "descriptions": {
           "colorGenerator": "Este projeto gera cores aleatórias em RGB e as converte para outros códigos de cores, basta apenas clicar no botão.",
+          "pls": "Lista itens no diretório atual do terminal, semelhante à utilidade 'ls'.",
           "ticTacToe": "Um jogo que é aberto no terminal. Escolha X ou O e onde deseja colocar. Divirta-se. :)",
           "passwordGenerator": "Um simples gerador de senhas. As senhas podem ser criadas, apagadas ou listadas com os argumentos listados na documentação. Todas as senhas são armazenadas no arquivo .txt, caso precise consultá-las depois.",
           "portfolio": "E por último mas não menos importante, esta página de portfólio em que você está agora. :)"
