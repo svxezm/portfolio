@@ -1,11 +1,10 @@
 import { useTranslations } from "next-intl";
-import { useScreenshot } from "/src/hooks/useScreenshot";
+import { useScreenshot } from "@/hooks/useScreenshot";
 import Image from "next/image";
 import colorGenerator from "/assets/images/projects/color-generator.png";
 import pls from "/assets/images/projects/pls.jpg";
 import ticTacToe from "/assets/images/projects/tic-tac-toe.png";
 import passwordGenerator from "/assets/images/projects/password-generator.webp";
-import portfolio from "/assets/images/projects/portfolio.webp";
 import reactIcon from "/assets/images/icons/languages/react.svg";
 import tsIcon from "/assets/images/icons/languages/typescript.svg";
 import csharpIcon from "/assets/images/icons/languages/c-sharp.svg";
@@ -58,7 +57,7 @@ export default function ProjectDisplay() {
         {
             title: t("portfolio"),
             description: tDesc("portfolio"),
-            imagePath: portfolio,
+            imagePath: "",
             projectLink: "https://github.com/svxezm/portfolio",
             deployedLink: "#",
             languages: [reactIcon, tsIcon]
