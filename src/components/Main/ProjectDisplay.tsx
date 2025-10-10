@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { useScreenshot } from "/src/hooks/useScreenshot";
 import Image from "next/image";
 import colorGenerator from "/assets/images/projects/color-generator.png";
 import pls from "/assets/images/projects/pls.jpg";
@@ -77,14 +78,20 @@ export default function ProjectDisplay() {
                     <div className="border-b border-b-[#450f57] mb-3 flex justify-between">
                         <h4>{project.title}</h4>
                     </div>
-                    <div className="flex flex-col lg:flex-row">
+                    <div className="lg:grid grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1">
                         <Image
-                            src={project.imagePath}
+                            src={project.deployedLink === "#" ? useScreenshot() : project.imagePath}
+                            width={390}
+                            height={300}
                             alt={project.title}
                             title={project.title}
                             quality={100}
                             unoptimized
-                            className="h-full w-full lg:h-[300px] lg:w-[390px]"
+                            className={`
+                                h-full w-full lg:h-[300px] lg:w-[390px]
+                                ${project.deployedLink === "#" &&
+                                    "lg:w-full object-cover"}
+                            `}
                         />
                         <div className="p-3 flex flex-col">
                             <div>
@@ -109,7 +116,7 @@ export default function ProjectDisplay() {
                                     {repository}
                                 </a>
                             </div>
-                            <div className="flex flex-row-reverse mt-auto">
+                            <div className="flex flex-row-reverse lg:mt-auto">
                                 {project.languages.map((lang, langIndex) => {
                                     let iconTitle = (() => {
                                         switch(lang) {
