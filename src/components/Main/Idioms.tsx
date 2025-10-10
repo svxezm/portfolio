@@ -1,11 +1,11 @@
 import { useTranslations } from "next-intl";
 
 export default function IdiomsDisplay() {
-  const t = useTranslations("Home.main.languages");
-  const title = t("titles.idioms");
+  const t = useTranslations("Home.main.idioms");
+  const title = t("title");
   const idioms = [
-    t("portuguese"),
-    t("english")
+    t("items.portuguese"),
+    t("items.english")
   ];
 
   return (
