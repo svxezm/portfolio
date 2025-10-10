@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
+import { Info } from "lucide-react";
 import LanguageItem from "./LanguageItem";
+import Tooltip from "/src/components/Utils/Tooltip";
 import tsIcon from "/assets/images/icons/languages/typescript.svg";
 import reactIcon from "/assets/images/icons/languages/react.svg";
 import rustIcon from "/assets/images/icons/languages/rust.svg";
@@ -9,11 +11,11 @@ import csharpIcon from "/assets/images/icons/languages/c-sharp.svg";
 
 export default function LanguageBlock() {
     const t = useTranslations("Home.main.languages");
-    const title = t("titles.languages");
+    const title = t("title");
 
     const languageInfo = [
         {
-            label: "Main",
+            label: t("groups.main.title"),
             icons: [
                 tsIcon,
                 reactIcon,
@@ -26,7 +28,8 @@ export default function LanguageBlock() {
             ]
         },
         {
-            label: "Functional",
+            label: t("groups.functional.title"),
+            description: t("groups.functional.description"),
             icons: [
                 cIcon,
                 cppIcon,
@@ -39,6 +42,16 @@ export default function LanguageBlock() {
             ]
         }
     ];
+
+    const infoTooltip = (content: string) => {
+        return (
+            <Tooltip text={content} width="64">
+                <div className="ml-2 scale-75 opacity-75 relative">
+                    <Info />
+                </div>
+            </Tooltip>
+        )
+    }
 
     return (
         <section
@@ -58,7 +71,10 @@ export default function LanguageBlock() {
                                 justify-center lg:justify-start`
                             }
                         >
-                            <h4>{info.label}</h4>
+                            <div className="flex justify-center items-center">
+                                <h4>{info.label}</h4>
+                                {info.description && infoTooltip(info.description)}
+                            </div>
                             <div className="flex flex-row">
                                 {info.icons.map((icon, iconIndex) => (
                                     <div

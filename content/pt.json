@@ -10,17 +10,28 @@
     },
     "main": {
       "top": {
-        "subtitle": "Desenvolvedor",
+        "subtitle": "Desenvolvedor Front-end",
         "resume": "Estudo por conta própria pela internet com foco no aprendizado para desenvolver páginas web e aplicativos cada ver melhores!",
         "contacts": "Contatos"
       },
+      "idioms": {
+        "title": "Idiomas",
+        "items": {
+          "portuguese": "🇧🇷 Português Brasileiro - nativo",
+          "english": "🇺🇸 Inglês - intermediário"
+        }
+      },
       "languages": {
-        "titles": {
-          "idioms": "Idiomas",
-          "languages": "Linguagens"
-        },
-        "portuguese": "🇧🇷 Português Brasileiro - nativo",
-        "english": "🇺🇸 Inglês - intermediário"
+        "title": "Linguagens",
+        "groups": {
+          "main": {
+            "title": "Principais"
+          },
+          "functional": {
+            "title": "Functionais",
+            "description": "Linguagem functional significa que tenho um pouco de experiência mas ainda tenho muito a aprender."
+          }
+        }
       },
       "projects": {
         "titles": {

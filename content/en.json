@@ -10,17 +10,28 @@
     },
     "main": {
       "top": {
-        "subtitle": "Developer",
+        "subtitle": "Front-end Developer",
         "resume": "I study on my own in the internet with focus on learning to develop better web pages and applications every time!",
         "contacts": "Contacts"
       },
+      "idioms": {
+        "title": "Idioms",
+        "items": {
+          "portuguese": "🇧🇷 Brazilian Portuguese - native",
+          "english": "🇺🇸 English - intermediary"
+        }
+      },
       "languages": {
-        "titles": {
-          "idioms": "Idioms",
-          "languages": "Languages"
-        },
-        "portuguese": "🇧🇷 Brazilian Portuguese - native",
-        "english": "🇺🇸 English - intermediary"
+        "title": "Languages",
+        "groups": {
+          "main": {
+            "title": "Main"
+          },
+          "functional": {
+            "title": "Functional",
+            "description": "Functional language means i have some experience but still have room for improvement."
+          }
+        }
       },
       "projects": {
         "titles": {
