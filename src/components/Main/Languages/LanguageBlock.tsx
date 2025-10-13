@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Info } from "lucide-react";
 import LanguageItem from "./LanguageItem";
-import Tooltip from "/src/components/Utils/Tooltip";
+import Tooltip from "@/src/components/Utils/Tooltip";
 import tsIcon from "/assets/images/icons/languages/typescript.svg";
 import reactIcon from "/assets/images/icons/languages/react.svg";
 import rustIcon from "/assets/images/icons/languages/rust.svg";
