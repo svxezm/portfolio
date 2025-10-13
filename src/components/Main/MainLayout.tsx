@@ -1,8 +1,8 @@
-import TopContent from "./TopContent";
-import Qualifications from "./Qualifications";
-import Idioms from "./Idioms";
-import LanguageBlock from "./Languages/LanguageBlock";
-import ProjectDisplay from "./ProjectDisplay";
+import TopContent from "@main/TopContent";
+import Qualifications from "@main/Qualifications";
+import Idioms from "@main/Idioms";
+import LanguageBlock from "@main/Languages/LanguageBlock";
+import ProjectDisplay from "@main/ProjectDisplay";
 
 export default function MainLayout() {
     return (

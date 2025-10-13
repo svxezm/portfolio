@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import Header from "@/components/Header/Header";
-import MainLayout from "@/components/Main/MainLayout";
-import starryBackground from "/public/starry-background.png";
+import Header from "@src/components/Header/Header";
+import MainLayout from "@src/components/Main/MainLayout";
+import starryBackground from "@images/starry-background.png";
 
 export default function Home() {
     const [isWindowLarge, setIsWindowLarge] = useState(false);

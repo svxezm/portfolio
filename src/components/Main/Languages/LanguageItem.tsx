@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import Tooltip from "@/components/Utils/Tooltip";
+import Tooltip from "@utils/Tooltip";
 
 interface LanguageItemProps {
     icon: StaticImageData;

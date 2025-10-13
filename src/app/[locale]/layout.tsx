@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "next-themes";
-import { locales,  getMessages } from "@/../i18n/request";
+import { locales,  getMessages } from "@i18n/request";
 import ClientProvider from "./ClientProvider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });

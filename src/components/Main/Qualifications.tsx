@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import { useTranslations } from "next-intl";
 import frontEnd from "/public/certificates/front-end.jpg"
 import fullStackPython from "/public/certificates/full-stack-python.jpg"
-import Modal from "../Utils/Modal"
+import Modal from "@utils/Modal"
 
 interface CertificateProps {
     name: string;

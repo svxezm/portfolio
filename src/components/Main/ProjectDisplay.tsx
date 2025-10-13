@@ -1,14 +1,14 @@
 import { useTranslations } from "next-intl";
-import { useScreenshot } from "@/hooks/useScreenshot";
+import { useScreenshot } from "@hooks/useScreenshot";
 import Image from "next/image";
-import colorGenerator from "/assets/images/projects/color-generator.png";
-import pls from "/assets/images/projects/pls.jpg";
-import ticTacToe from "/assets/images/projects/tic-tac-toe.png";
-import passwordGenerator from "/assets/images/projects/password-generator.webp";
-import reactIcon from "/assets/images/icons/languages/react.svg";
-import tsIcon from "/assets/images/icons/languages/typescript.svg";
-import csharpIcon from "/assets/images/icons/languages/c-sharp.svg";
-import rustIcon from "/assets/images/icons/languages/rust.svg";
+import colorGenerator from "@project_imgs/color-generator.png";
+import pls from "@project_imgs/pls.jpg";
+import ticTacToe from "@project_imgs/tic-tac-toe.png";
+import passwordGenerator from "@project_imgs/password-generator.webp";
+import reactIcon from "@lang_icons/react.svg";
+import tsIcon from "@lang_icons/typescript.svg";
+import csharpIcon from "@lang_icons/c-sharp.svg";
+import rustIcon from "@lang_icons/rust.svg";
 
 export default function ProjectDisplay() {
     const t = useTranslations("Home.main.projects.titles");

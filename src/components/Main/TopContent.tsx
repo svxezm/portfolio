@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image"
-import discordIcon from "/assets/images/icons/social/discord.webp";
-import githubIcon from "/assets/images/icons/social/github.webp";
-import linkedinIcon from "/assets/images/icons/social/linkedin.png";
-import profilePicture from "/assets/images/foto-de-perfil.jpg";
+import discordIcon from "@social_icons/discord.webp";
+import githubIcon from "@social_icons/github.webp";
+import linkedinIcon from "@social_icons/linkedin.png";
+import profilePicture from "@images/foto-de-perfil.jpg";
 
 export default function TopContent() {
     const t = useTranslations("Home.main.top");

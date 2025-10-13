@@ -1,13 +1,13 @@
 import { useTranslations } from "next-intl";
 import { Info } from "lucide-react";
-import LanguageItem from "./LanguageItem";
-import Tooltip from "@/src/components/Utils/Tooltip";
-import tsIcon from "/assets/images/icons/languages/typescript.svg";
-import reactIcon from "/assets/images/icons/languages/react.svg";
-import rustIcon from "/assets/images/icons/languages/rust.svg";
-import cIcon from "/assets/images/icons/languages/c.svg";
-import cppIcon from "/assets/images/icons/languages/cpp.svg";
-import csharpIcon from "/assets/images/icons/languages/c-sharp.svg";
+import LanguageItem from "@main/Languages/LanguageItem";
+import Tooltip from "@src/components/Utils/Tooltip";
+import tsIcon from "@lang_icons/typescript.svg";
+import reactIcon from "@lang_icons/react.svg";
+import rustIcon from "@lang_icons/rust.svg";
+import cIcon from "@lang_icons/c.svg";
+import cppIcon from "@lang_icons/cpp.svg";
+import csharpIcon from "@lang_icons/c-sharp.svg";
 
 export default function LanguageBlock() {
     const t = useTranslations("Home.main.languages");
