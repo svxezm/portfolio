@@ -1,47 +1,53 @@
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { supabase } from "@lib/supabase";
 import { Info } from "lucide-react";
-import LanguageItem from "./LanguageItem";
-import Tooltip from "@/src/components/Utils/Tooltip";
-import tsIcon from "/assets/images/icons/languages/typescript.svg";
-import reactIcon from "/assets/images/icons/languages/react.svg";
-import rustIcon from "/assets/images/icons/languages/rust.svg";
-import cIcon from "/assets/images/icons/languages/c.svg";
-import cppIcon from "/assets/images/icons/languages/cpp.svg";
-import csharpIcon from "/assets/images/icons/languages/c-sharp.svg";
+import LanguageItem from "@main/Languages/LanguageItem";
+import Tooltip from "@src/components/Utils/Tooltip";
+
+interface LanguageTable {
+    labels: string[];
+    title: string;
+};
+
+interface LanguageSection {
+    label: string;
+    description: string;
+    titles: string[];
+    icons: string[];
+};
 
 export default function LanguageBlock() {
-    const t = useTranslations("Home.main.languages");
+    const [languageInfo, setLanguageInfo] = useState<LanguageSection[]>([]);
+
+    const t = useTranslations("home.main.languages");
     const title = t("title");
 
-    const languageInfo = [
-        {
-            label: t("groups.main.title"),
-            icons: [
-                tsIcon,
-                reactIcon,
-                rustIcon
-            ],
-            titles: [
-                "TypeScript",
-                "React",
-                "Rust"
-            ]
-        },
-        {
-            label: t("groups.functional.title"),
-            description: t("groups.functional.description"),
-            icons: [
-                cIcon,
-                cppIcon,
-                csharpIcon
-            ],
-            titles: [
-                "C",
-                "C++",
-                "C#"
-            ]
-        }
-    ];
+    useEffect(() => {
+        (async () => {
+            const languageResponse = await fetch("/api/languages");
+            const languages: LanguageTable[] = await languageResponse.json();
+
+            const language: LanguageSection[] = languages.map((lang) => {
+                const icons: string[] = lang.labels.map((lg) => {
+                    const imageUrl = supabase.storage
+                        .from("images")
+                        .getPublicUrl(`icons/languages/${lg}.svg`);
+
+                    return imageUrl.data.publicUrl;
+                });
+                const description = t.raw(`groups.${lang.title}`)?.description;
+
+                return {
+                    ...(description && { description }),
+                    label: t(`groups.${lang.title}.title`),
+                    titles: lang.labels,
+                    icons
+                };
+            });
+            setLanguageInfo(language);
+        })();
+    }, []);
 
     const infoTooltip = (content: string) => {
         return (
@@ -63,7 +69,7 @@ export default function LanguageBlock() {
             <div className="flex flex-col flex-wrap mx-auto lg:mx-0 w-full">
                 <h3 className="w-full text-center lg:text-left mb-4 w-fit">{title}</h3>
                 <div className="flex flex-col lg:flex-row justify-between">
-                    {languageInfo.map((info, index) => (
+                    {languageInfo?.map((info, index) => (
                         <div
                             key={index}
                             className={

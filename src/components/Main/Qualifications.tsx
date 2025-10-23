@@ -1,9 +1,8 @@
 import { useState } from "react";
-import Image, { StaticImageData } from "next/image";
 import { useTranslations } from "next-intl";
-import frontEnd from "/public/certificates/front-end.jpg"
-import fullStackPython from "/public/certificates/full-stack-python.jpg"
-import Modal from "../Utils/Modal"
+import { getImage, } from "@lib/request"; 
+import Image, { StaticImageData } from "next/image";
+import Modal from "@utils/Modal"
 
 interface CertificateProps {
     name: string;
@@ -13,21 +12,16 @@ interface CertificateProps {
 export default function Qualifications() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentCertificate, setCurrentCertificate] = useState<CertificateProps | null>(null);
-    const t = useTranslations("Home.main.qualifications");
+    const t = useTranslations("home.main.qualifications");
 
-    const certificates = [
-        {
-            name: t("certificates.frontEnd.title"),
-            path: frontEnd,
-            date: t("certificates.frontEnd.date")
-        },
-        {
-            name: t("certificates.fullStackPython.title"),
-            path: fullStackPython,
-            date: t("certificates.fullStackPython.date"),
-
-        }
-    ];
+    const certificateKeys = Object.keys(t.raw("certificates"));
+    const certificates = certificateKeys.map((cert) => {
+        return {
+            name: t(`certificates.${cert}.title`),
+            path: getImage(`certificates/${cert}.jpg`),
+            date: t(`certificates.${cert}.date`)
+        };
+    });
 
     const openModal = (certificate: CertificateProps) => {
         setCurrentCertificate(certificate);
@@ -36,10 +30,11 @@ export default function Qualifications() {
 
     return (
         <section
-        className={
-            `lg:justify-evenly items-baseline text-center lg:text-left
-            mx-auto lg:w-full lg:px-8 mb-16 lg:mb-8`
-        }>
+            className={`
+                lg:justify-evenly items-baseline text-center lg:text-left
+                mx-auto lg:w-full lg:px-8 mb-16 lg:mb-8
+            `}
+        >
             <h3
                 className="mb-4"
             >{t("title")}</h3>
@@ -61,6 +56,8 @@ export default function Qualifications() {
                 <Image
                     src={currentCertificate.path}
                     alt="Certificate image"
+                    height={600}
+                    width={850}
                 />
             )}
             </Modal>

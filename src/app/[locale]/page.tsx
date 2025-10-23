@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import Header from "@/components/Header/Header";
-import MainLayout from "@/components/Main/MainLayout";
-import starryBackground from "/public/starry-background.png";
+import { getImage } from "@lib/request";
+import Header from "@src/components/Header/Header";
+import MainLayout from "@src/components/Main/MainLayout";
 
 export default function Home() {
     const [isWindowLarge, setIsWindowLarge] = useState(false);
@@ -24,7 +24,7 @@ export default function Home() {
                 className="h-full flex flex-col items-center justify-between p-0 lg:p-8 lg:p-24"
                 style={
                     isWindowLarge === true ? {
-                        backgroundImage: `url(${starryBackground.src})`,
+                        backgroundImage: `url(${getImage("general/starry-background.png")})`,
                         backgroundRepeat: "repeat-y",
                         backgroundAttachment: "scroll",
                         backgroundPosition: "top",

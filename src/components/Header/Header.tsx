@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
-import TranslationMenu from "@/components/Header/TranslationMenu";
-import DarkModeButton from "@/components/Header/DarkModeButton";
+import TranslationMenu from "@header/TranslationMenu";
+import DarkModeButton from "@header/DarkModeButton";
 
 export default function Header() {
-    const t = useTranslations("Home.header.navigation");
+    const t = useTranslations("home.header.navigation");
 
     const nav = {
         links: [
