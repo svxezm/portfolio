@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { getImage, } from "@lib/request"; 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Modal from "@utils/Modal"
 
 interface CertificateProps {
     name: string;
-    path: StaticImageData;
+    path: string;
+    date: string;
 }
 
 export default function Qualifications() {

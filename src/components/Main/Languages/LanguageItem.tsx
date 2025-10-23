@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import Tooltip from "@utils/Tooltip";
 
 interface LanguageItemProps {
-    icon: StaticImageData;
+    icon: string;
     text: string;
 };
 
