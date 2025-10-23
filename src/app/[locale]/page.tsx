@@ -6,36 +6,35 @@ import Header from "@src/components/Header/Header";
 import MainLayout from "@src/components/Main/MainLayout";
 
 export default function Home() {
-    const [isWindowLarge, setIsWindowLarge] = useState(false);
+  const [isWindowLarge, setIsWindowLarge] = useState(false);
 
+  useEffect(() => {
+    const breakpoint = 1024;
 
-    useEffect(() => {
-        const breakpoint = 1024;
+    if (window.innerWidth >= breakpoint) {
+      setIsWindowLarge(true);
+    }
+  }, []);
 
-        if (window.innerWidth >= breakpoint) {
-            setIsWindowLarge(true);
+  return (
+    <>
+      <Header />
+      <main
+        className="h-full flex flex-col items-center justify-between p-0 lg:p-8 lg:p-24"
+        style={
+          isWindowLarge === true ? {
+            backgroundImage: `url(${getImage("general/starry-background.png")})`,
+            backgroundRepeat: "repeat-y",
+            backgroundAttachment: "scroll",
+            backgroundPosition: "top",
+            height: "100%"
+          } : {
+            height: "100%"
+          }
         }
-    }, []);
-
-    return (
-        <>
-            <Header />
-            <main
-                className="h-full flex flex-col items-center justify-between p-0 lg:p-8 lg:p-24"
-                style={
-                    isWindowLarge === true ? {
-                        backgroundImage: `url(${getImage("general/starry-background.png")})`,
-                        backgroundRepeat: "repeat-y",
-                        backgroundAttachment: "scroll",
-                        backgroundPosition: "top",
-                        height: "100%"
-                    } : {
-                        height: "100%"
-                    }
-                }
-            >
-                <MainLayout />
-            </main>
-        </>
-    );
+      >
+        <MainLayout />
+      </main>
+    </>
+  );
 }

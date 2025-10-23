@@ -5,7 +5,7 @@ module.exports = withNextIntl({
     remotePatterns: [
       {
         protocol: "https",
-        /*        https: , "" , [ abcdef.supabase.co ] */
+        /*        ( "https:" , "" , [ "xyzabc.supabase.co" ] ) */
         hostname: `${process.env.NEXT_PUBLIC_SUPABASE_URL}`.split("/").at(-1)
       }
     ]

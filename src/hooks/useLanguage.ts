@@ -1,5 +1,5 @@
-export const useLanguage = () => {
-  const format = (lang: string, defaultLabel: string = ""): string => {
+export const useLanguage = (lang: string, defaultLabel: string = "") => {
+  const format = (): string => {
     switch(lang) {
         case "react":
             return "React";
@@ -16,7 +16,7 @@ export const useLanguage = () => {
         default:
             return defaultLabel;
     };
-  }
+  };
 
   return {
     format

@@ -10,6 +10,7 @@ export async function getProjects() {
     console.error("Failed to fetch projects.", error);
     return [];
   }
+
   return data;
 };
 
@@ -24,6 +25,7 @@ export async function getMessages(locale: string) {
     console.error("Failed to fetch translations.", error);
     return {};
   }
+
   return data.data;
 };
 
