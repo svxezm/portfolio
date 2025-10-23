@@ -6,7 +6,7 @@ export default function TranslationMenu() {
     const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
     const [isHover, setIsHover] = useState(false);
 
-    const t = useTranslations("Home.header");
+    const t = useTranslations("home.header");
     const translationText = t("translations");
 
     const toggleLangMenu = () => setIsLangMenuOpen(!isLangMenuOpen);

@@ -22,6 +22,12 @@
       }
     ],
     "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@lib/*": [
+        "./lib/*"
+      ],
       "@hooks/*": [
         "./src/hooks/*"
       ],
@@ -36,18 +42,6 @@
       ],
       "@utils/*": [
         "./src/components/Utils/*"
-      ],
-      "@lang_icons/*": [
-        "./assets/images/icons/languages/*"
-      ],
-      "@social_icons/*": [
-        "./assets/images/icons/social/*"
-      ],
-      "@images/*": [
-        "./assets/images/*"
-      ],
-      "@project_imgs/*": [
-        "./assets/images/projects/*"
       ],
       "@i18n/*": [
         "./i18n/*"

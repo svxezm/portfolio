@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "next-themes";
-import { locales,  getMessages } from "@i18n/request";
+import { getMessages } from "@lib/request";
 import ClientProvider from "./ClientProvider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Portfólio",
-    description: "Página portfolio de Igor Borges Kühl"
+    description: "Página portfólio de Igor Borges Kühl"
 };
 
 interface LayoutProps {
@@ -24,6 +24,7 @@ export default async function RootLayout({
     children, params
 }: LayoutProps) {
     const { locale } = params;
+    const locales = ["pt", "en"];
 
     if (!locales.includes(locale)) {
         notFound();

@@ -3,7 +3,7 @@ import TranslationMenu from "@header/TranslationMenu";
 import DarkModeButton from "@header/DarkModeButton";
 
 export default function Header() {
-    const t = useTranslations("Home.header.navigation");
+    const t = useTranslations("home.header.navigation");
 
     const nav = {
         links: [

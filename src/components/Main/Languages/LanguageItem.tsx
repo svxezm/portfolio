@@ -1,13 +1,15 @@
+import { useLanguage } from "@hooks/useLanguage"; 
 import Image, { StaticImageData } from "next/image";
 import Tooltip from "@utils/Tooltip";
 
 interface LanguageItemProps {
     icon: StaticImageData;
     text: string;
-}
+};
 
 export default function LanguageItem({ icon, text }: LanguageItemProps) {
     const size = 80;
+    text = useLanguage().format(text)
 
     return (
         <div className="relative">
